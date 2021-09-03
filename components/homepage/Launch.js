@@ -8,36 +8,38 @@ const LaunchInfoSection = ({ mintDate, dateOptions }) => {
   const { fonts, colors } = useTheme();
   return (
     <Flex
-      height={["100vh"]}
+      height={["100%"]}
       sx={{ backgroundColor: colors.primary }}
       alignItems="center"
       justifyContent="center"
       role="region"
       aria-label="Launch Info"
+      id="launch"
     >
       <Box>
         <Heading
           fontSize={[4, 6]}
           fontWeight={[600]}
-          fontFamily={fonts.body + " !important"}
           px={[4]}
           pb={[4]}
-          color={colors.dark1}
+          color={colors.light}
           textAlign={["center"]}
         >
-          Mint
+          Launch
         </Heading>
-        <Text px={[5]} mb={[6]} color={colors.dark1} textAlign="center">
+        <Text px={[5]} mb={[5]} color={colors.light} textAlign="center">
           On <br />
           {mintDate.toLocaleDateString(undefined, dateOptions)}
           <br />
           {mintDate.toLocaleTimeString()}
         </Text>
-        <Link href="/mint#mint">
-          <Button color={colors.dark1} bgColor={colors.accent1}>
-            Let's mint
-          </Button>
-        </Link>
+        <Flex justifyContent="center">
+          <Link href="/mint">
+            <Button color={colors.light1} bgColor={colors.accent1}>
+              Let's mint
+            </Button>
+          </Link>
+        </Flex>
       </Box>
     </Flex>
   );

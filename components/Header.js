@@ -23,6 +23,7 @@ const LINKS = [
   { href: "/#stats", label: "Stats" },
   { href: "/#roadmap", label: "Roadmap" },
   { href: "/#faqs", label: "FAQs" },
+  { href: "/#launch", label: "Launch" },
 ];
 const Header = () => {
   const { colors } = useTheme();

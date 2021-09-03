@@ -25,6 +25,7 @@ const FeatureSection = ({ features }) => {
       justifyContent="center"
       role="region"
       aria-label="Features"
+      id="stats"
     >
       <Heading
         fontSize={[4, 6]}
