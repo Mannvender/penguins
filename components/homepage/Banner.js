@@ -8,9 +8,13 @@ const Banner = styled(Flex)`
   background-blend-mode: saturation;
   background-size: 300px 300px;
   position: relative;
+  height: calc(100vh -80px);
 `;
 export const StyledHeading = styled(Heading)`
-  text-shadow: 5px 5px ${(props) => props.theme.colors.accent2};
+  text-shadow: 3px 3px ${(props) => props.theme.colors.accent2};
+  @media (min-width: 1024px) {
+    text-shadow: 5px 5px ${(props) => props.theme.colors.accent2};
+  }
 `;
 
 const BannerSection = () => {
@@ -18,7 +22,7 @@ const BannerSection = () => {
   return (
     <>
       <Banner
-        height={["100vh", "100%"]}
+        height={["calc(100vh - 80px)", "100%"]}
         width={["100%"]}
         alignItems="center"
         justifyContent="center"
@@ -30,6 +34,7 @@ const BannerSection = () => {
           fontWeight={[600]}
           color={[colors.primary]}
           mb={[5]}
+          textAlign="center"
         >
           Polar Penguins
         </StyledHeading>

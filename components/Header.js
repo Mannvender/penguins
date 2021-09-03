@@ -72,11 +72,13 @@ const Header = () => {
         alignItems="center"
         px={[3]}
       >
-        <NavLink href="/mint#mint">
-          <Button bgColor={colors.dark1} color={colors.light1}>
-            Mint
-          </Button>
-        </NavLink>
+        <Box display={["none", "initial"]}>
+          <NavLink href="/mint#mint">
+            <Button bgColor={colors.dark1} color={colors.light1}>
+              Mint
+            </Button>
+          </NavLink>
+        </Box>
         <Link
           href="https://twitter.com/PolarPenguinNFT"
           target="_blank"

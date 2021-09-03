@@ -25,8 +25,8 @@ const Index = () => {
       <Box
         sx={{
           height: ["auto", "100vh"],
-          display: "grid",
-          gridTemplateRows: ["auto 1fr"],
+          display: ["block", "grid"],
+          gridTemplateRows: ["auto auto", "auto 1fr"],
           gridAutoColumns: "1fr",
           scrollBehavior: "smooth",
         }}
