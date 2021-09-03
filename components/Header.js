@@ -7,8 +7,6 @@ import Image from "next/image";
 import NavLink from "next/link";
 import Button from "components/Button";
 
-import { LinkExternal as Link } from "./Links";
-
 const GiPenguin = styled(GiPenguinBase)`
   cursor: pointer;
   &:hover {
@@ -20,6 +18,12 @@ const StyledHeader = styled.header`
   flex-direction: row;
   height: 100px;
 `;
+const LINKS = [
+  { href: "/#penguins", label: "Penguins" },
+  { href: "/#stats", label: "Stats" },
+  { href: "/#roadmap", label: "Roadmap" },
+  { href: "/#faqs", label: "FAQs" },
+];
 const Header = () => {
   const { colors } = useTheme();
   const { pathname } = useRouter();
@@ -31,9 +35,11 @@ const Header = () => {
         </NavLink>
       </Flex>
       <Flex justifyContent="center" alignItems="center" flexBasis="60%">
-        <NavLink href="/#koalas" active={pathname === "/"}>
-          Penguins
-        </NavLink>
+        {LINKS.map((link) => (
+          <Box mr={[3]} key={link.label}>
+            <NavLink href={link.href}>{link.label}</NavLink>
+          </Box>
+        ))}
       </Flex>
       <Flex flexBasis="20%" justifyContent="center" alignItems="center">
         <NavLink href="/mint#mint">

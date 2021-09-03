@@ -7,6 +7,7 @@ export default {
   colors: {
     primary: primaryColor,
     accent1: "#917D92",
+    accent2: "#11315b",
     dark: "#0C101A",
     dark1: "#59595A",
     dark2: "#69696a",
@@ -16,7 +17,7 @@ export default {
   },
   breakpoints: ["576px", "768px", "992px", "1200px"],
   space: [0, 4, 8, 16, 32, 64, 128, 256],
-  fontSizes: [6, 8, 10, 12, 14, 16, 20, 24, 32, 48, 64],
+  fontSizes: [6, 8, 10, 12, 14, 16, 20, 24, 32, 48, 72],
   fontWeights: {
     normal: 400,
     bold: 700,

@@ -8,23 +8,23 @@ const CarouselSection = () => {
   const { fonts, colors } = useTheme();
   return (
     <Flex
-      sx={{ height: ["100%"], backgroundColor: colors.accent1 }}
+      sx={{ height: ["100%"] }}
+      id="penguins"
       role="region"
       aria-label="Carousel"
       alignItems="center"
       justifyContent="center"
       textAlign={["center"]}
     >
-      <Box>
+      <Box width={["100%"]}>
         <Heading
           fontSize={[4, 6]}
           fontWeight={[600]}
-          fontFamily={fonts.body + " !important"}
           px={[4]}
           pb={[4]}
-          color={colors.dark1}
+          color={colors.dark}
         >
-          Sneak Peak
+          My Precious
         </Heading>
         <Slider />
       </Box>

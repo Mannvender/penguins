@@ -47,29 +47,6 @@ export default () => {
             border-radius: 20px;
             border: 3px solid ${Theme.colors.dark};
         }
-        .swiper {
-          text-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
-          background-image: url(/banner.png);
-          background-size: contain;
-          background-position: 50%;
-        }
-        @media (min-width: 1024px) {
-          .swiper {
-            width: 100%;
-            height: 100%;
-          }
-          .swiper-pagination-bullet {
-            border-radius: 0 !important;
-          }
-          .swiper-pagination-bullet-active{
-            background-color: ${Theme.colors.primary} !important;
-          }
-        }
-        
     `}
     </style>
   );

@@ -1,96 +1,60 @@
 import React from "react";
+import styled from "styled-components";
 import Image from "next/image";
-import SlickSlider from "react-slick";
 
-const URLS = [
-  "001",
-  "002",
-  "003",
-  "004",
-  "005",
-  "006",
-  "007",
-  "008",
-  "009",
-  "010",
-  "011",
-  "012",
-  "013",
-  "014",
-  "015",
-  "016",
-  "017",
-  "018",
-  "019",
-  "020",
-  "021",
-  "022",
-  "023",
-  "024",
-  "025",
-  "026",
-  "027",
-  "028",
-  "029",
-  "030",
-  "031",
-  "032",
-  "033",
-  "034",
-  "035",
-  "036",
-  "037",
-  "038",
-  "039",
-  "040",
-  "041",
-  "042",
-  "043",
-];
+const URLS = ["001", "002"];
+const Container = styled.div`
+  position: relative;
+  overflow: hidden;
+  height: 50vh;
+  width: 100%;
+  div {
+    position: absolute;
+  }
+`;
+const AnimatedBg = styled.div`
+  width: 100vw;
+  height: 100%;
+  background-image: url("/bg.webp");
+  background-size: auto 100%;
+  animation: animated-section-move 45s linear infinite;
+  @keyframes animated-section-move {
+    from {
+      background-position-x: 0;
+    }
+    to {
+      background-position-x: calc(100% - 100vw);
+    }
+  }
+`;
+const AnimatedPenguins = styled.div`
+  bottom: 24.9%;
+  width: max-content;
+  height: 52%;
+  img {
+    height: 100%;
+    margin-right: 2vh;
+    padding-right: 0.6vh;
+  }
+`;
 const Slider = () => {
   return (
-    <SlickSlider {...settings}>
-      {URLS.map((number) => (
-        <Image
-          height="300px"
-          width="300px"
-          src={`/koala_${number}.png`}
-          alt={`koala ${number}`}
-          quality="70"
-          key={number}
-        />
-      ))}
-    </SlickSlider>
+    <Container>
+      <AnimatedBg />
+      <AnimatedPenguins>
+        {URLS.map((number) => (
+          <Image
+            height="300px"
+            width="300px"
+            src={`/penguin_${number}.png`}
+            alt={`penguin ${number}`}
+            quality="70"
+            key={number}
+          />
+        ))}
+      </AnimatedPenguins>
+    </Container>
   );
 };
 
 export default Slider;
-
-const settings = {
-  slidesToShow: 4,
-  centerMode: true,
-  centerPadding: "56px",
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 400,
-  arrows: false,
-  infinite: true,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {},
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-      },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-      },
-    },
-  ],
-};

@@ -30,12 +30,12 @@ const Index = () => {
           display: "grid",
           gridTemplateRows: ["auto 1fr"],
           gridAutoColumns: "1fr",
+          scrollBehavior: "smooth",
         }}
+        position="relative"
       >
         <Header />
-        <Box id="koalas" overflowY="hidden">
-          {isMobile ? sections : <Swiper slides={sections} />}
-        </Box>
+        <Box overflowY="auto">{sections}</Box>
       </Box>
     </>
   );
