@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import { Box } from "rebass";
 
 const URLS = ["001", "002", "003", "001", "002", "003", "001", "002", "003"];
 const Container = styled.div`

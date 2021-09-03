@@ -1,9 +1,7 @@
 import React from "react";
-import { Box, Flex, Text } from "rebass";
+import { Box, Flex } from "rebass";
 import styled, { useTheme } from "styled-components";
 import { GiPenguin as GiPenguinBase } from "react-icons/gi";
-import { useRouter } from "next/router";
-import Image from "next/image";
 import NavLink from "next/link";
 import Button from "components/Button";
 
@@ -16,7 +14,16 @@ const GiPenguin = styled(GiPenguinBase)`
 const StyledHeader = styled.header`
   display: flex;
   flex-direction: row;
-  height: 100px;
+  height: 80px;
+  @media (min-width: 1024px) {
+    height: 100px;
+  }
+`;
+const StyledFlex = styled(Flex)`
+  visibility: hidden;
+  @media (min-width: 1024px) {
+    visibility: unset;
+  }
 `;
 const LINKS = [
   { href: "/#penguins", label: "Penguins" },
@@ -27,7 +34,6 @@ const LINKS = [
 ];
 const Header = () => {
   const { colors } = useTheme();
-  const { pathname } = useRouter();
   return (
     <StyledHeader>
       <Flex alignItems="center" justifyContent="center" flexBasis="20%">
@@ -35,14 +41,22 @@ const Header = () => {
           <GiPenguin size="40px" color={colors.dark1} />
         </NavLink>
       </Flex>
-      <Flex justifyContent="center" alignItems="center" flexBasis="60%">
+      <StyledFlex
+        justifyContent="center"
+        alignItems="center"
+        flexBasis={["40%", "60%"]}
+      >
         {LINKS.map((link) => (
           <Box mr={[3]} key={link.label}>
             <NavLink href={link.href}>{link.label}</NavLink>
           </Box>
         ))}
-      </Flex>
-      <Flex flexBasis="20%" justifyContent="center" alignItems="center">
+      </StyledFlex>
+      <Flex
+        flexBasis={["40%", "20%"]}
+        justifyContent="center"
+        alignItems="center"
+      >
         <NavLink href="/mint#mint">
           <Button bgColor={colors.dark1} color={colors.light1}>
             Mint
