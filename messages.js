@@ -43,3 +43,11 @@ export const FEATURES = [
     text: "used for storage",
   },
 ];
+
+export const LINKS = [
+  { href: "/#penguins", label: "Penguins", showOnMobile: true },
+  { href: "/#stats", label: "Stats", showOnMobile: false },
+  { href: "/#roadmap", label: "Roadmap", showOnMobile: true },
+  { href: "/#faqs", label: "FAQs", showOnMobile: true },
+  { href: "/#launch", label: "Launch", showOnMobile: false },
+];
