@@ -2,8 +2,11 @@ import React from "react";
 import { Box, Flex } from "rebass";
 import styled, { useTheme } from "styled-components";
 import { GiPenguin as GiPenguinBase } from "react-icons/gi";
+import { SiDiscord } from "react-icons/si";
+import { FaTwitter } from "react-icons/fa";
 import NavLink from "next/link";
 import Button from "components/Button";
+import { LinkExternal as Link } from "components/Links";
 
 const GiPenguin = styled(GiPenguinBase)`
   cursor: pointer;
@@ -25,6 +28,12 @@ const StyledFlex = styled(Flex)`
     visibility: unset;
   }
 `;
+const CircularBg = styled(Flex)`
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: ${(props) => props.theme.colors.dark1};
+`;
 const LINKS = [
   { href: "/#penguins", label: "Penguins" },
   { href: "/#stats", label: "Stats" },
@@ -36,7 +45,12 @@ const Header = () => {
   const { colors } = useTheme();
   return (
     <StyledHeader>
-      <Flex alignItems="center" justifyContent="center" flexBasis="20%">
+      <Flex
+        alignItems="center"
+        justifyContent="flex-start"
+        flexBasis="20%"
+        px={[3]}
+      >
         <NavLink href="/">
           <GiPenguin size="40px" color={colors.dark1} />
         </NavLink>
@@ -54,14 +68,29 @@ const Header = () => {
       </StyledFlex>
       <Flex
         flexBasis={["40%", "20%"]}
-        justifyContent="center"
+        justifyContent="flex-end"
         alignItems="center"
+        px={[3]}
       >
         <NavLink href="/mint#mint">
           <Button bgColor={colors.dark1} color={colors.light1}>
             Mint
           </Button>
         </NavLink>
+        <Link
+          href="https://twitter.com/PolarPenguinNFT"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <CircularBg justifyContent="center" alignItems="center" ml={[3]}>
+            <FaTwitter fill={colors.light1} />
+          </CircularBg>
+        </Link>
+        <Link target="_blank" rel="noopener noreferrer">
+          <CircularBg justifyContent="center" alignItems="center" ml={[1]}>
+            <SiDiscord fill={colors.light1} />
+          </CircularBg>
+        </Link>
       </Flex>
     </StyledHeader>
   );

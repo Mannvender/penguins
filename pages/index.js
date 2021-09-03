@@ -10,7 +10,6 @@ import RoadmapSection from "components/homepage/Roadmap";
 import LaunchInfoSection from "components/homepage/Launch";
 import Footer from "components/Footer";
 import { FEATURES, ROADMAP, MINT_DATE, DATE_OPTIONS } from "../messages";
-import theme from "styles/theme";
 
 const sections = [
   <BannerSection />,
@@ -25,7 +24,7 @@ const Index = () => {
     <>
       <Box
         sx={{
-          height: "100vh",
+          height: ["auto", "100vh"],
           display: "grid",
           gridTemplateRows: ["auto 1fr"],
           gridAutoColumns: "1fr",

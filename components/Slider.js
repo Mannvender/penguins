@@ -1,19 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import { isMobile } from "react-device-detect";
 
 const URLS = ["001", "002", "003", "001", "002", "003", "001", "002", "003"];
 const Container = styled.div`
   position: relative;
   overflow: hidden;
-  height: 50vh;
+  height: 56vh;
   width: 100%;
   .inner {
     position: absolute;
   }
 `;
 const AnimatedBg = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100%;
   background-image: url("/bg.webp");
   background-size: auto 100%;
@@ -28,7 +29,7 @@ const AnimatedBg = styled.div`
   }
 `;
 const AnimatedPenguins = styled.div`
-  bottom: 31px;
+  bottom: 6.9%;
   width: max-content;
   transform: translate3d(0, 0, 0);
   animation: slideshow 25s linear infinite;
@@ -45,8 +46,8 @@ const Slider = () => {
       <AnimatedPenguins className="inner">
         {URLS.map((number) => (
           <Image
-            height="300px"
-            width="300px"
+            height={isMobile ? "200px" : "300px"}
+            width={isMobile ? "200px" : "300px"}
             src={`/penguin_${number}.png`}
             alt={`penguin ${number}`}
             quality="70"

@@ -8,7 +8,7 @@ const LaunchInfoSection = ({ mintDate, dateOptions }) => {
   const { fonts, colors } = useTheme();
   return (
     <Flex
-      height={["100%"]}
+      height={["100vh", "100%"]}
       sx={{ backgroundColor: colors.primary }}
       alignItems="center"
       justifyContent="center"

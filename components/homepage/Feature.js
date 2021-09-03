@@ -20,7 +20,7 @@ const FeatureSection = ({ features }) => {
   return (
     <Flex
       flexDirection="column"
-      height={["100%"]}
+      height={["auto", "100%"]}
       alignItems="center"
       justifyContent="center"
       role="region"
@@ -30,6 +30,7 @@ const FeatureSection = ({ features }) => {
       <Heading
         fontSize={[4, 6]}
         fontWeight={[600]}
+        pt={[4, 0]}
         pb={[4]}
         color={colors.dark1}
       >
