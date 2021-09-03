@@ -22,7 +22,7 @@ const CarouselSection = () => {
           fontWeight={[600]}
           px={[4]}
           pb={[4]}
-          color={colors.dark}
+          color={colors.dark1}
         >
           My Precious
         </Heading>

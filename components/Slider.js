@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import { Box } from "rebass";
 
-const URLS = ["001", "002"];
+const URLS = ["001", "002", "003", "001", "002", "003", "001", "002", "003"];
 const Container = styled.div`
   position: relative;
   overflow: hidden;
   height: 50vh;
   width: 100%;
-  div {
+  .inner {
     position: absolute;
   }
 `;
@@ -28,20 +29,21 @@ const AnimatedBg = styled.div`
   }
 `;
 const AnimatedPenguins = styled.div`
-  bottom: 24.9%;
+  bottom: 31px;
   width: max-content;
-  height: 52%;
-  img {
-    height: 100%;
-    margin-right: 2vh;
-    padding-right: 0.6vh;
+  transform: translate3d(0, 0, 0);
+  animation: slideshow 25s linear infinite;
+  @keyframes slideshow {
+    100% {
+      transform: translateX(-66.6%);
+    }
   }
 `;
 const Slider = () => {
   return (
     <Container>
-      <AnimatedBg />
-      <AnimatedPenguins>
+      <AnimatedBg className="inner" />
+      <AnimatedPenguins className="inner">
         {URLS.map((number) => (
           <Image
             height="300px"

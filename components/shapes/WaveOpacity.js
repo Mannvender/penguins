@@ -12,7 +12,7 @@ const ShapeContainer = styled.div`
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 214px;
+    height: 150px;
   }
   .shape-fill {
     fill: ${(props) => props.theme.colors.primary};
