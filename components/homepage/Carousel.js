@@ -15,6 +15,7 @@ const CarouselSection = () => {
       alignItems="center"
       justifyContent="center"
       textAlign={["center"]}
+      backgroundColor={[colors.primary]}
     >
       <Box width={["100%"]}>
         <Heading
@@ -22,7 +23,7 @@ const CarouselSection = () => {
           fontWeight={[600]}
           px={[4]}
           pb={[4]}
-          color={colors.dark1}
+          color={colors.light1}
         >
           My Precious
         </Heading>

@@ -4,7 +4,7 @@ import { useTheme } from "styled-components";
 import Wave from "components/shapes/Wave";
 
 const RoadmapSection = ({ roadmap }) => {
-  const { fonts, colors } = useTheme();
+  const { colors } = useTheme();
   return (
     <Flex
       flexDirection="column"

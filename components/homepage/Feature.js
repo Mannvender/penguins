@@ -1,7 +1,7 @@
 import React from "react";
 import { Heading, Box, Flex, Text } from "rebass";
 import styled, { useTheme } from "styled-components";
-import Image from "next/image";
+import SplitShape from "components/shapes/Split";
 
 const StyledBox = styled(Box)`
   background-image: url("/stat_bg.jpg");
@@ -16,7 +16,7 @@ const StatContainer = styled(Flex)`
   background-color: ${(props) => props.theme.colors.light1};
 `;
 const FeatureSection = ({ features }) => {
-  const { fonts, colors } = useTheme();
+  const { colors } = useTheme();
   return (
     <Flex
       flexDirection="column"
@@ -26,7 +26,9 @@ const FeatureSection = ({ features }) => {
       role="region"
       aria-label="Features"
       id="stats"
+      sx={{ position: "relative" }}
     >
+      <SplitShape />
       <Heading
         fontSize={[4, 6]}
         fontWeight={[600]}
@@ -41,6 +43,7 @@ const FeatureSection = ({ features }) => {
         flexWrap="wrap"
         justifyContent="space-around"
         width={["100%"]}
+        mb={[5]}
       >
         {features.map((feature, i) => (
           <StyledBox p={[3]} m={[3]}>
@@ -59,6 +62,7 @@ const FeatureSection = ({ features }) => {
           </StyledBox>
         ))}
       </Flex>
+      <SplitShape inverted />
     </Flex>
   );
 };

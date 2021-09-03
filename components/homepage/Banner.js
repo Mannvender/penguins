@@ -13,7 +13,7 @@ const Banner = styled(Flex)`
 export const StyledHeading = styled(Heading)`
   text-shadow: 3px 3px ${(props) => props.theme.colors.accent2};
   @media (min-width: 1024px) {
-    text-shadow: 5px 5px ${(props) => props.theme.colors.accent2};
+    text-shadow: 4px 4px ${(props) => props.theme.colors.accent2};
   }
 `;
 
