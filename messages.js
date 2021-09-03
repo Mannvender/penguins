@@ -28,35 +28,19 @@ export const DATE_OPTIONS = {
 
 export const FEATURES = [
   {
-    image: {
-      src: "/feature_02.png",
-      height: "150px",
-      width: "180px",
-    },
-    text: "1817 kool koalas hanging on the Etherclyptus trees",
+    title: "1000",
+    text: "polar penguins",
   },
   {
-    image: {
-      src: "/feature_04.png",
-      height: "150px",
-      width: "190px",
-    },
-    text: "0.01 ETH + gas",
+    title: "0.05",
+    text: "ETH + gas",
   },
   {
-    image: {
-      src: "/feature_01.png",
-      height: "240px",
-      width: "180px",
-    },
-    text: "Ownership and usage rights",
+    title: "Own it",
+    text: "with usage rights",
   },
   {
-    image: {
-      src: "/feature_03.png",
-      height: "250px",
-      width: "150px",
-    },
-    text: "Stored on IPFS Pinata",
+    title: "IPFS",
+    text: "used for storage",
   },
 ];

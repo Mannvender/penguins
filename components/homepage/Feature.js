@@ -1,15 +1,26 @@
 import React from "react";
 import { Heading, Box, Flex, Text } from "rebass";
-import { useTheme } from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Image from "next/image";
 
+const StyledBox = styled(Box)`
+  background-image: url("/stat_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 200px;
+  width: 200px;
+`;
+const StatContainer = styled(Flex)`
+  width: 100%;
+  height: 100%;
+  background-color: ${(props) => props.theme.colors.light1};
+`;
 const FeatureSection = ({ features }) => {
   const { fonts, colors } = useTheme();
   return (
     <Flex
       flexDirection="column"
-      style={{ backgroundColor: colors.primary }}
-      height={["auto", "100vh"]}
+      height={["100%"]}
       alignItems="center"
       justifyContent="center"
       role="region"
@@ -18,40 +29,32 @@ const FeatureSection = ({ features }) => {
       <Heading
         fontSize={[4, 6]}
         fontWeight={[600]}
-        fontFamily={fonts.body + " !important"}
-        p={[4]}
+        pb={[4]}
         color={colors.dark1}
       >
-        Kool Benefits
+        Stats
       </Heading>
-      <Flex px={[5]} flexWrap="wrap">
+      <Flex
+        px={[5]}
+        flexWrap="wrap"
+        justifyContent="space-around"
+        width={["100%"]}
+      >
         {features.map((feature, i) => (
-          <Flex
-            key={i}
-            flexBasis={["100%", "50%"]}
-            flexDirection="column"
-            alignItems="center"
-          >
-            <Box
-              sx={{
-                position: "relative",
-                height: feature.image.height,
-                width: feature.image.width,
-              }}
+          <StyledBox p={[3]} m={[3]}>
+            <StatContainer
+              justifyContent="center"
+              alignItems="center"
+              flexDirection="column"
             >
-              <Image
-                layout="fill"
-                objectFit="cover"
-                objectPosition="50% 50%"
-                src={feature.image.src}
-                alt={`feature ${i + 1}`}
-                quality="70"
-              />
-            </Box>
-            <Text mb={[5]} sx={{ color: colors.dark1 }} textAlign="center">
-              {feature.text}
-            </Text>
-          </Flex>
+              <Heading color={colors.dark1} mb={[3]} fontSize={[4]}>
+                {feature.title}
+              </Heading>
+              <Text sx={{ color: colors.dark1 }} textAlign="center">
+                {feature.text}
+              </Text>
+            </StatContainer>
+          </StyledBox>
         ))}
       </Flex>
     </Flex>
