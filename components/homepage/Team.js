@@ -56,10 +56,17 @@ const TeamSection = ({ team }) => {
           {team.map((member, index) => (
             <Box flexBasis={["100%", "50%", "25%"]} p={[4]}>
               <Box height="100px">
-                <Text color={colors[member.color]} fontSize={[3]} mb={[3]}>
+                <Text
+                  color={colors[member.color]}
+                  fontSize={[3]}
+                  mb={[3]}
+                  textAlign={["center", "left"]}
+                >
                   {member.name}
                 </Text>
-                <Text fontSize={[1, 2]}>{member.description}</Text>
+                <Text fontSize={[1, 2]} textAlign={["center", "left"]}>
+                  {member.description}
+                </Text>
               </Box>
               <animated.div
                 onMouseMove={({ clientX: x, clientY: y }) =>
@@ -87,6 +94,7 @@ const TeamSection = ({ team }) => {
                         position: "absolute",
                         top: ["-10px"],
                         left: ["8px"],
+                        zIndex: 1,
                       }}
                       style={{}}
                       height={["80px"]}

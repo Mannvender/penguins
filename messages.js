@@ -57,7 +57,7 @@ export const TEAM = [
   {
     name: "Scholar Penguin",
     description: "Drinks n knows a thing or 2 about nfts",
-    color: "accent1",
+    color: "primary",
     image: { src: "/penguin_013.png" },
   },
   {
@@ -69,13 +69,14 @@ export const TEAM = [
   {
     name: "Dollar Penguin",
     description: "Developer of the www world, walker of the night",
-    color: "dark",
+    color: "primary",
     image: { src: "/penguin_038.png" },
   },
   {
     name: "Painter Penguin",
-    description: "Picasso amongst us mortals, humble & honest - 2 lies 1 truth",
-    color: "accent1",
+    description:
+      "Picasso amongst us mortals - humble, hardworkin & honest - 2 lies 1 truth",
+    color: "primary",
     image: { src: "/penguin_001.png" },
   },
 ];

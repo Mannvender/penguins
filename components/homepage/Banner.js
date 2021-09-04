@@ -6,6 +6,7 @@ import WaveOpacityShape from "components/shapes/WaveOpacity";
 const Banner = styled(Flex)`
   background-image: url("/banner_02.png");
   background-size: cover;
+  background-position: 82% 50%;
   position: relative;
   height: calc(100vh -80px);
 `;
