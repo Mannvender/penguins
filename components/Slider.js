@@ -90,7 +90,7 @@ const AnimatedFood = styled.div`
   height: 40%;
   background-image: url("/food.png");
   background-size: auto 100%;
-  animation: animated-section-move 3.07s linear infinite;
+  animation: animated-section-move 2.07s linear infinite;
   @keyframes animated-section-move {
     from {
       background-position-x: 0;
