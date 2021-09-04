@@ -2,6 +2,7 @@ import React from "react";
 import { Heading, Box, Flex, Text } from "rebass";
 import { useTheme } from "styled-components";
 import Wave from "components/shapes/Wave";
+import Split from "components/shapes/Split";
 
 const RoadmapSection = ({ roadmap }) => {
   const { colors } = useTheme();
@@ -16,6 +17,7 @@ const RoadmapSection = ({ roadmap }) => {
       id="roadmap"
       sx={{ position: "relative" }}
     >
+      <Split />
       <Box>
         <Heading
           fontSize={[4, 6]}

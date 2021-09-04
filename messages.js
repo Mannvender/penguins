@@ -51,3 +51,30 @@ export const LINKS = [
   { href: "/#faqs", label: "FAQs", showOnMobile: true },
   { href: "/#launch", label: "Launch", showOnMobile: false },
 ];
+
+export const TEAM = [
+  {
+    name: "Scholar Penguin",
+    description: "Drinks n knows a thing or 2 about nfts",
+    color: "accent1",
+    image: { src: "/penguin_004.png" },
+  },
+  {
+    name: "Roller Penguin",
+    description: "Its a hot hot world, our contact to the outside icebergs",
+    color: "primary",
+    image: { src: "/penguin_002.png" },
+  },
+  {
+    name: "Dollar Penguin",
+    description: "Developer of the www world, walker of the night",
+    color: "dark",
+    image: { src: "/penguin_003.png" },
+  },
+  {
+    name: "Painter Penguin",
+    description: "Picasso amongst us mortals, humble & honest - 2 lies 1 truth",
+    color: "accent1",
+    image: { src: "/penguin_001.png" },
+  },
+];
