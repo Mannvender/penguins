@@ -46,7 +46,7 @@ const TeamSection = ({ team }) => {
           fontWeight={[600]}
           px={[4]}
           pb={[4]}
-          mt={[4, 0]}
+          mt={[4, 2, 0]}
           color={colors.dark1}
           textAlign={["center"]}
         >
