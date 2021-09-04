@@ -50,6 +50,13 @@ const BottomNav = styled(Flex)`
   left: 0;
   background-color: ${({ theme }) => theme.colors.dark};
   color: ${({ theme }) => theme.colors.light2};
+  transform: translate3d(0, 0, 0);
+  /* opacity: ${(props) => (props.isScrollDown && props.isMobile ? 1 : 0)}; */
+  transform: ${(props) =>
+    props.isScrollDown && props.isMobile
+      ? "translate3d(0,0,0)"
+      : "translate3d(0,80px,0)"};
+  transition: transform 0.4s ease-in-out;
 `;
 const Header = () => {
   const { colors } = useTheme();
@@ -129,7 +136,14 @@ const Header = () => {
         pb={[1]}
         pt={[2]}
         justifyContent="space-between"
-        style={{ opacity: scrollDirection === "down" && isMobile ? 1 : 0 }}
+        isScrollDown={scrollDirection === "down"}
+        isMobile={isMobile}
+        style={{
+          transition:
+            scrollDirection === "down"
+              ? "transform3d(0,0,0)"
+              : "transform3d(0,-80px,0)",
+        }}
       >
         {LINKS.filter((link) => link.showOnMobile).map((link) => (
           <NavLink href={link.href} py={[1]} key={link.label}>

@@ -27,16 +27,16 @@ export const DATE_OPTIONS = {
 
 export const FEATURES = [
   {
-    title: "1000",
+    title: "3000",
     text: "polar penguins",
   },
   {
     title: "0.05",
-    text: "ETH + gas",
+    text: "ETH + that old hag gas",
   },
   {
     title: "Own it",
-    text: "with usage rights",
+    text: "Ownership with usage rights",
   },
   {
     title: "IPFS",

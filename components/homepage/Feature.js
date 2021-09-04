@@ -6,9 +6,7 @@ import SplitShape from "components/shapes/Split";
 const StyledBox = styled(Box)`
   background-image: url("/stat_bg.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
-  height: 200px;
-  width: 200px;
+  background-size: cover;
 `;
 const StatContainer = styled(Flex)`
   width: 100%;
@@ -32,7 +30,7 @@ const FeatureSection = ({ features }) => {
       <Heading
         fontSize={[4, 6]}
         fontWeight={[600]}
-        pt={[4, 0]}
+        pt={[5, 0]}
         pb={[4]}
         color={colors.dark1}
       >
@@ -46,7 +44,13 @@ const FeatureSection = ({ features }) => {
         mb={[5]}
       >
         {features.map((feature, i) => (
-          <StyledBox p={[3]} m={[3]}>
+          <StyledBox
+            p={[3]}
+            mb={[5, 0]}
+            height={["183px", "264px"]}
+            flexBasis={["75%", "40%", "20%"]}
+            mb={[5]}
+          >
             <StatContainer
               justifyContent="center"
               alignItems="center"
@@ -55,7 +59,7 @@ const FeatureSection = ({ features }) => {
               <Heading color={colors.dark1} mb={[3]} fontSize={[4]}>
                 {feature.title}
               </Heading>
-              <Text sx={{ color: colors.dark1 }} textAlign="center">
+              <Text sx={{ color: colors.dark1 }} textAlign="center" p={[2]}>
                 {feature.text}
               </Text>
             </StatContainer>
