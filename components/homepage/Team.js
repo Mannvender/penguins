@@ -4,7 +4,7 @@ import styled, { useTheme } from "styled-components";
 import Image from "next/image";
 import { useSprings, animated } from "react-spring";
 
-const StyledBox = styled(Box)`
+const StyledFlex = styled(Flex)`
   border-bottom: 8px solid ${(props) => props.theme.colors[props.borderColor]};
   position: relative;
   &:hover {
@@ -74,34 +74,32 @@ const TeamSection = ({ team }) => {
                 }
                 style={{ transform: props[index].xys.interpolate(trans) }}
               >
-                <StyledBox
+                <StyledFlex
                   key={index}
                   p={[2]}
                   pb={0}
                   borderColor={member.color}
                   backgroundColor={colors.light2}
                 >
-                  {true && (
-                    <animated.div style={{ opacity: props[index].opacity }}>
-                      <Box
-                        sx={{
-                          position: "absolute",
-                          top: ["-10px"],
-                          left: ["8px"],
-                        }}
-                        style={{}}
-                        height={["80px"]}
-                        width={["50px"]}
-                      >
-                        <Image
-                          layout="fill"
-                          src={"/pin_02.png"}
-                          alt={`band-aid`}
-                          quality="70"
-                        />
-                      </Box>
-                    </animated.div>
-                  )}
+                  <animated.div style={{ opacity: props[index].opacity }}>
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: ["-10px"],
+                        left: ["8px"],
+                      }}
+                      style={{}}
+                      height={["80px"]}
+                      width={["50px"]}
+                    >
+                      <Image
+                        layout="fill"
+                        src={"/pin_02.png"}
+                        alt={`band-aid`}
+                        quality="70"
+                      />
+                    </Box>
+                  </animated.div>
                   <Image
                     height="300px"
                     width="300px"
@@ -109,7 +107,7 @@ const TeamSection = ({ team }) => {
                     alt={`scholar penguin`}
                     quality="70"
                   />
-                </StyledBox>
+                </StyledFlex>
               </animated.div>
             </Box>
           ))}
