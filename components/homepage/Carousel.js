@@ -18,7 +18,7 @@ const CarouselSection = () => {
       backgroundColor={[colors.primary]}
     >
       <Box width={["100%"]}>
-        <Heading
+        {/* <Heading
           fontSize={[4, 6]}
           fontWeight={[600]}
           px={[4]}
@@ -26,7 +26,7 @@ const CarouselSection = () => {
           color={colors.light1}
         >
           My Precious
-        </Heading>
+        </Heading> */}
         <Slider />
       </Box>
     </Flex>

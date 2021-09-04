@@ -22,9 +22,8 @@ const BannerSection = () => {
   return (
     <>
       <Banner
-        height={["calc(100vh - 80px)", "100%"]}
+        height={["calc(100vh - 80px)", "150%"]}
         width={["100%"]}
-        alignItems="center"
         justifyContent="center"
         role="region"
         aria-label="Banner"
@@ -35,6 +34,8 @@ const BannerSection = () => {
           color={[colors.primary]}
           mb={[5]}
           textAlign="center"
+          mt={["30vh", "53%", "22%"]}
+          width={["300px", "auto"]}
         >
           Polar Penguins
         </StyledHeading>
