@@ -8,8 +8,16 @@ import FeatureSection from "components/homepage/Feature";
 import RoadmapSection from "components/homepage/Roadmap";
 import LaunchInfoSection from "components/homepage/Launch";
 import TeamSection from "components/homepage/Team";
+import FaqsSection from "components/homepage/Faqs";
 import Footer from "components/Footer";
-import { FEATURES, ROADMAP, MINT_DATE, DATE_OPTIONS, TEAM } from "messages";
+import {
+  FEATURES,
+  ROADMAP,
+  MINT_DATE,
+  DATE_OPTIONS,
+  TEAM,
+  FAQS,
+} from "messages";
 
 const sections = [
   <BannerSection />,
@@ -18,6 +26,7 @@ const sections = [
   <TeamSection team={TEAM} />,
   <RoadmapSection roadmap={ROADMAP} />,
   <LaunchInfoSection mintDate={MINT_DATE} dateOptions={DATE_OPTIONS} />,
+  <FaqsSection faqs={FAQS} />,
   <Footer />,
 ];
 const Index = () => {

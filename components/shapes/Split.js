@@ -17,19 +17,19 @@ const ShapeContainer = styled.div`
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 200px;
+    height: 100px;
     @media (min-width: 1024px) {
       height: 295px;
     }
   }
   .shape-fill {
-    fill: ${(props) => props.theme.colors.primary};
+    fill: ${(props) => props.theme.colors[props.fill]};
   }
 `;
 
-const SplitShape = ({ inverted }) => {
+const SplitShape = ({ inverted, fill = "primary" }) => {
   return (
-    <ShapeContainer inverted={inverted}>
+    <ShapeContainer inverted={inverted} fill={fill}>
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"

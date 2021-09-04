@@ -17,7 +17,7 @@ export const ROADMAP = [
   },
 ];
 
-export const MINT_DATE = new Date("2021-09-10T15:00:00.000+00:00");
+export const MINT_DATE = new Date("2021-09-19T15:00:00.000+00:00");
 export const DATE_OPTIONS = {
   weekday: "long",
   year: "numeric",
@@ -77,5 +77,13 @@ export const TEAM = [
     description: "Picasso amongst us mortals, humble & honest - 2 lies 1 truth",
     color: "accent1",
     image: { src: "/penguin_001.png" },
+  },
+];
+
+export const FAQS = [
+  {
+    question: "How will Polar Penguins launch?",
+    answer:
+      "Join our Discord or follow us on Twitter for updates. All Polar Pals minting will happen at www.polarpenguins.co with later purchases on Opensea.io",
   },
 ];
