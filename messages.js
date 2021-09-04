@@ -57,19 +57,19 @@ export const TEAM = [
     name: "Scholar Penguin",
     description: "Drinks n knows a thing or 2 about nfts",
     color: "accent1",
-    image: { src: "/penguin_004.png" },
+    image: { src: "/penguin_013.png" },
   },
   {
     name: "Roller Penguin",
     description: "Its a hot hot world, our contact to the outside icebergs",
     color: "primary",
-    image: { src: "/penguin_002.png" },
+    image: { src: "/penguin_005.png" },
   },
   {
     name: "Dollar Penguin",
     description: "Developer of the www world, walker of the night",
     color: "dark",
-    image: { src: "/penguin_003.png" },
+    image: { src: "/penguin_038.png" },
   },
   {
     name: "Painter Penguin",
