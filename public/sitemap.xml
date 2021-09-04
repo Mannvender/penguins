@@ -5,12 +5,12 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>https://www.koolkoalas.world/</loc>
+  <loc>https://www.polarpenguins.co/</loc>
   <lastmod>2021-08-27T05:31:26+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.koolkoalas.world/mint</loc>
+  <loc>https://www.polarpenguins.co/mint</loc>
   <lastmod>2021-08-27T05:31:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>

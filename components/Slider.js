@@ -51,7 +51,7 @@ const Container = styled.div`
 const AnimatedBg = styled.div`
   width: 100%;
   height: 100%;
-  background-image: url("/bg.webp");
+  background-image: url("/slider_bg.png");
   background-size: auto 100%;
   animation: animated-section-move 45s linear infinite;
   @keyframes animated-section-move {
@@ -64,7 +64,7 @@ const AnimatedBg = styled.div`
   }
 `;
 const AnimatedPenguins = styled.div`
-  bottom: 13%;
+  bottom: 11%;
   width: max-content;
   transform: translate3d(0, 0, 0);
   animation: slideshow 25s linear infinite;
@@ -75,12 +75,18 @@ const AnimatedPenguins = styled.div`
   }
 `;
 const AnimatedFood = styled.div`
-  bottom: 7%;
+  bottom: 0%;
   width: 100vw;
-  height: 30%;
+  height: 53%;
   background-image: url("/food.png");
   background-size: auto 100%;
   animation: animated-section-move 2.07s linear infinite;
+  @media (min-width: 1024px) {
+    animation: animated-section-move 2.5s linear infinite;
+  }
+  @media (min-width: 1440px) {
+    animation: animated-section-move 2.7s linear infinite;
+  }
   @keyframes animated-section-move {
     from {
       background-position-x: 0;

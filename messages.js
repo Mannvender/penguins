@@ -47,6 +47,7 @@ export const FEATURES = [
 export const LINKS = [
   { href: "/#penguins", label: "Penguins", showOnMobile: true },
   { href: "/#stats", label: "Stats", showOnMobile: false },
+  { href: "/#team", label: "Team", showOnMobile: false },
   { href: "/#roadmap", label: "Roadmap", showOnMobile: true },
   { href: "/#faqs", label: "FAQs", showOnMobile: true },
   { href: "/#launch", label: "Launch", showOnMobile: false },

@@ -4,9 +4,8 @@ import { Heading, Flex } from "rebass";
 import WaveOpacityShape from "components/shapes/WaveOpacity";
 
 const Banner = styled(Flex)`
-  background-image: linear-gradient(black, black), url("/banner.jpg");
-  background-blend-mode: saturation;
-  background-size: 300px 300px;
+  background-image: url("/banner_02.png");
+  background-size: cover;
   position: relative;
   height: calc(100vh -80px);
 `;
