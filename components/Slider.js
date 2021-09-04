@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import { Box } from "rebass";
-import { isMobile } from "react-device-detect";
 
 const URLS = [
   "004",
@@ -67,8 +66,7 @@ const AnimatedBg = styled.div`
   }
 `;
 const AnimatedPenguins = styled.div`
-  height: 52%;
-  bottom: 18%;
+  bottom: 13%;
   width: max-content;
   transform: translate3d(0, 0, 0);
   animation: slideshow 25s linear infinite;
@@ -77,17 +75,11 @@ const AnimatedPenguins = styled.div`
       transform: translateX(-66.6%);
     }
   }
-  @media (min-width: 1024px) {
-    bottom: 31%;
-  }
-  @media (min-width: 1281px) {
-    bottom: 22%;
-  }
 `;
 const AnimatedFood = styled.div`
   bottom: 7%;
   width: 100vw;
-  height: 40%;
+  height: 30%;
   background-image: url("/food.png");
   background-size: auto 100%;
   animation: animated-section-move 2.07s linear infinite;
@@ -107,8 +99,8 @@ const Slider = () => {
       <AnimatedPenguins className="inner">
         {URLS.map((number) => (
           <Image
-            height={isMobile ? "200px" : "300px"}
-            width={isMobile ? "200px" : "300px"}
+            height="300px"
+            width="300px"
             src={`/penguin_${number}.png`}
             alt={`penguin ${number}`}
             quality="70"
