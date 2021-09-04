@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
 const Footer = () => {
   return (
     <StyledFooter>
-      <Text>©2021 Polar Penguins</Text>
+      <Text>©2021 Polar Penguins NFT</Text>
     </StyledFooter>
   );
 };
