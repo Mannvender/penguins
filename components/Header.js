@@ -26,6 +26,8 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: row;
   height: 80px;
+  z-index: 1;
+  box-shadow: -1px 4px 7px -1px rgba(0, 0, 0, 0.8);
   @media (min-width: 1024px) {
     height: 100px;
   }
@@ -51,12 +53,12 @@ const BottomNav = styled(Flex)`
   background-color: ${({ theme }) => theme.colors.dark};
   color: ${({ theme }) => theme.colors.light2};
   transform: translate3d(0, 0, 0);
-  /* opacity: ${(props) => (props.isScrollDown && props.isMobile ? 1 : 0)}; */
   transform: ${(props) =>
     props.isScrollDown && props.isMobile
       ? "translate3d(0,0,0)"
       : "translate3d(0,80px,0)"};
   transition: transform 0.4s ease-in-out;
+  box-shadow: -1px -4px 7px -1px rgba(0, 0, 0, 0.8);
 `;
 const Header = () => {
   const { colors } = useTheme();
