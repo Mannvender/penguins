@@ -6,18 +6,18 @@ export default () => {
     <style>
       {`
         body {
-            margin: 0;
-            font-size: 1rem;
-            color: ${Theme.colors.dark1};
-            background-color: ${Theme.colors.light1};
-            font-family: ${Theme.fonts.body};
-            scroll-behavior: smooth;
+          margin: 0;
+          font-size: 1rem;
+          color: ${Theme.colors.dark1};
+          background-color: ${Theme.colors.light1};
+          font-family: ${Theme.fonts.body};
         }
         * {
-            box-sizing: border-box;
+          box-sizing: border-box;
+          scroll-behavior: smooth;
         }
         h1, h2, h3, h4, h5, h6 {
-            font-family: ${Theme.fonts.heading} !important;
+          font-family: ${Theme.fonts.heading} !important;
         }
         a{
           text-decoration: none;
