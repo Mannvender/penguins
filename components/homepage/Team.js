@@ -7,6 +7,10 @@ import { useSprings, animated } from "react-spring";
 const StyledFlex = styled(Flex)`
   border-bottom: 8px solid ${(props) => props.theme.colors[props.borderColor]};
   position: relative;
+  background-image: url(${(props) => props.backgroundUrl});
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
   &:hover {
     img {
       display: none;
@@ -32,7 +36,7 @@ const TeamSection = ({ team }) => {
   return (
     <Flex
       flexDirection="column"
-      height={["auto", "100%"]}
+      height={["auto", "auto", "100%"]}
       alignItems="center"
       justifyContent="center"
       role="region"
@@ -86,7 +90,9 @@ const TeamSection = ({ team }) => {
                   p={[2]}
                   pb={0}
                   borderColor={member.color}
-                  backgroundColor={colors.light2}
+                  backgroundUrl={member.image.src}
+                  height={["185px", "264px"]}
+                  flexBasis="100%"
                 >
                   <animated.div style={{ opacity: props[index].opacity }}>
                     <Box
@@ -108,13 +114,6 @@ const TeamSection = ({ team }) => {
                       />
                     </Box>
                   </animated.div>
-                  <Image
-                    height="300px"
-                    width="300px"
-                    src={member.image.src}
-                    alt={`scholar penguin`}
-                    quality="70"
-                  />
                 </StyledFlex>
               </animated.div>
             </Box>
