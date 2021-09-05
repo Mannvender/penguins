@@ -51,7 +51,7 @@ const Container = styled.div`
 const AnimatedBg = styled.div`
   width: 100%;
   height: 100%;
-  background-image: url("/slider_bg_01.png");
+  background-image: url("/slider_bg_02.png");
   background-size: auto 100%;
   animation: animated-section-move 45s linear infinite;
   @keyframes animated-section-move {
