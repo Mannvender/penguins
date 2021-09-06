@@ -14,7 +14,7 @@ const ShapeContainer = styled.div`
     width: calc(100% + 1.3px);
     height: 80px;
     @media (min-width: 1024px) {
-      height: 150px;
+      height: ${(props) => props.height || 150}px;
     }
   }
   .shape-fill {
@@ -22,9 +22,9 @@ const ShapeContainer = styled.div`
   }
 `;
 
-const WaveOpacityShape = () => {
+const WaveOpacityShape = ({ height }) => {
   return (
-    <ShapeContainer>
+    <ShapeContainer height={height}>
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
