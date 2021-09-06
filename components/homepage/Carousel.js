@@ -8,7 +8,7 @@ const CarouselSection = () => {
   const { fonts, colors } = useTheme();
   return (
     <Flex
-      height={["100vh", "100vh"]}
+      height={["auto"]}
       id="penguins"
       role="region"
       aria-label="Carousel"
@@ -17,16 +17,7 @@ const CarouselSection = () => {
       textAlign={["center"]}
       backgroundColor={[colors.primary]}
     >
-      <Box width={["100%"]}>
-        {/* <Heading
-          fontSize={[4, 6]}
-          fontWeight={[600]}
-          px={[4]}
-          pb={[4]}
-          color={colors.light1}
-        >
-          My Precious
-        </Heading> */}
+      <Box width={["100%"]} mb={[6]}>
         <Slider />
       </Box>
     </Flex>

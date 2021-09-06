@@ -18,7 +18,7 @@ const FeatureSection = ({ features }) => {
   return (
     <Flex
       flexDirection="column"
-      height={["auto", "100vh"]}
+      height={["auto"]}
       alignItems="center"
       justifyContent="center"
       role="region"
@@ -29,19 +29,18 @@ const FeatureSection = ({ features }) => {
       <SplitShape />
       <Flex
         px={[5]}
-        pt={[6, 0]}
         flexWrap="wrap"
         justifyContent="space-around"
         width={["100%"]}
+        mt={[6]}
         mb={[5, 0]}
       >
         {features.map((feature, i) => (
           <StyledBox
             p={[3]}
-            mb={[5, 0]}
             height={["183px", "264px"]}
             flexBasis={["75%", "40%", "20%"]}
-            mb={[5]}
+            mb={[5, 6]}
           >
             <StatContainer
               justifyContent="center"

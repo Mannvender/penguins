@@ -64,7 +64,7 @@ const DaddyRoadmapSection = ({ roadmap }) => {
         </Heading>
         <Box px={[5, 6]} mb={[5, 0]}>
           {roadmap.map((step, i) => (
-            <Flex mb={[3]} key={i} alignItems="center">
+            <Flex mb={[4, 3]} key={i} alignItems="center">
               <Text
                 color={colors.primary}
                 sx={{ minWidth: ["72px"], fill: colors.primary }}

@@ -78,8 +78,8 @@ export const FEATURES = [
     text: "polar penguins",
   },
   {
-    title: "0.05",
-    text: "ETH + that old hag gas",
+    title: "0.05 ETH",
+    text: "+ that old hag gas",
   },
   {
     title: "100+",

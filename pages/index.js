@@ -31,8 +31,8 @@ const sections = [
   <TeamSection team={TEAM} />,
   <RoadmapSection roadmap={ROADMAP} />,
   <DaddyRoadmapSection roadmap={DADDY_ROADMAP} />,
-  <LaunchInfoSection mintDate={MINT_DATE} dateOptions={DATE_OPTIONS} />,
   <FaqsSection faqs={FAQS} />,
+  <LaunchInfoSection mintDate={MINT_DATE} dateOptions={DATE_OPTIONS} />,
   <Footer />,
 ];
 const Index = () => {

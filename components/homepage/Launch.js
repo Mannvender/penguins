@@ -3,20 +3,22 @@ import { Heading, Text, Flex, Box } from "rebass";
 import { useTheme } from "styled-components";
 import Button from "components/Button";
 import Link from "next/link";
+import SplitShape from "components/shapes/Split";
 
 const LaunchInfoSection = ({ mintDate, dateOptions }) => {
-  const { fonts, colors } = useTheme();
+  const { colors } = useTheme();
   return (
     <Flex
-      height={["100vh", "100vh"]}
-      sx={{ backgroundColor: colors.primary }}
+      height={["auto"]}
+      sx={{ backgroundColor: colors.primary, position: "relative" }}
       alignItems="center"
       justifyContent="center"
       role="region"
       aria-label="Launch Info"
       id="launch"
     >
-      <Box>
+      <SplitShape fill="light1" />
+      <Box my={[6]}>
         <Heading
           fontSize={[4, 6]}
           fontWeight={[600]}

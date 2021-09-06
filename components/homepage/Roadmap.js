@@ -1,7 +1,6 @@
 import React from "react";
 import { Heading, Box, Flex, Text } from "rebass";
 import { useTheme } from "styled-components";
-import Wave from "components/shapes/Wave";
 import Split from "components/shapes/Split";
 
 const RoadmapSection = ({ roadmap }) => {
@@ -9,7 +8,7 @@ const RoadmapSection = ({ roadmap }) => {
   return (
     <Flex
       flexDirection="column"
-      height={["100vh", "100vh"]}
+      height={["auto"]}
       alignItems="center"
       justifyContent="center"
       role="region"
@@ -18,7 +17,7 @@ const RoadmapSection = ({ roadmap }) => {
       sx={{ position: "relative" }}
     >
       <Split />
-      <Box>
+      <Box my={[6]}>
         <Heading
           fontSize={[4, 6]}
           fontWeight={[600]}
@@ -29,9 +28,9 @@ const RoadmapSection = ({ roadmap }) => {
         >
           Roadmap
         </Heading>
-        <Box px={[5]} mb={[5, 0]}>
+        <Box px={[5]}>
           {roadmap.map((step, i) => (
-            <Flex mb={[3]} key={i} alignItems="center">
+            <Flex mb={[4, 3]} key={i} alignItems="center">
               <Text
                 color={colors.primary}
                 sx={{ minWidth: ["72px"] }}

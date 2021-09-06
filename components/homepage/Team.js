@@ -36,7 +36,7 @@ const TeamSection = ({ team }) => {
   return (
     <Flex
       flexDirection="column"
-      height={["auto", "auto", "100vh"]}
+      height={["auto"]}
       alignItems="center"
       justifyContent="center"
       role="region"
@@ -44,19 +44,18 @@ const TeamSection = ({ team }) => {
       id="team"
       sx={{ position: "relative" }}
     >
-      <Box width="100%">
+      <Box width="100%" my={[6]}>
         <Heading
           fontSize={[4, 6]}
           fontWeight={[600]}
           px={[4]}
           pb={[3]}
-          mt={[6, 6, 0]}
           color={colors.dark1}
           textAlign={["center"]}
         >
           Team
         </Heading>
-        <Flex px={[5]} mb={[6, 6, 0]} flexWrap="wrap">
+        <Flex px={[5]} flexWrap="wrap">
           {team.map((member, index) => (
             <Box flexBasis={["100%", "50%", "25%"]} p={[4]}>
               <Box height="100px">

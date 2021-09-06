@@ -6,7 +6,7 @@ const Backstory = ({ backStory }) => {
   const { colors } = useTheme();
   return (
     <Flex
-      height={["auto", "100vh"]}
+      height={["auto"]}
       sx={{ backgroundColor: colors.primary }}
       alignItems="center"
       justifyContent="center"
@@ -14,13 +14,12 @@ const Backstory = ({ backStory }) => {
       aria-label="back story"
       id="back-story"
     >
-      <Box>
+      <Box my={[5]}>
         <Heading
           fontSize={[4, 5]}
           fontWeight={[600]}
           px={[4, 6]}
           pb={[4]}
-          mt={[6, 6, 0]}
           color={colors.light}
           textAlign={["center"]}
         >

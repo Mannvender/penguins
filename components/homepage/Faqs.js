@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Heading, Box, Flex, Text } from "rebass";
 import styled, { useTheme } from "styled-components";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
-import SplitShape from "components/shapes/Split";
 
 const StyledFlex = styled(Flex)`
   color: ${(props) => props.theme.colors.light1};
@@ -34,7 +33,6 @@ const FaqsSection = ({ faqs }) => {
       backgroundColor={colors.primary}
       sx={{ position: "relative" }}
     >
-      <SplitShape fill="light1" />
       <Heading
         fontSize={[4, 6]}
         fontWeight={[600]}
