@@ -10,7 +10,8 @@ const StyledFlex = styled(Flex)`
   background-image: url(${(props) => props.backgroundUrl});
   background-position: 50% 0%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-color: ${(props) => props.bgColor};
   &:hover {
     img {
       display: none;
@@ -90,6 +91,7 @@ const TeamSection = ({ team }) => {
                   pb={0}
                   borderColor={member.color}
                   backgroundUrl={member.image.src}
+                  bgColor={member.image.bgColor}
                   height={["185px", "264px"]}
                   flexBasis="100%"
                 >
