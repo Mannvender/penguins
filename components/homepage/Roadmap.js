@@ -31,16 +31,22 @@ const RoadmapSection = ({ roadmap }) => {
         </Heading>
         <Box px={[5]} mb={[5, 0]}>
           {roadmap.map((step, i) => (
-            <Flex mb={[3]} key={i}>
-              <Text color={colors.primary} sx={{ minWidth: ["72px"] }}>
+            <Flex mb={[3]} key={i} alignItems="center">
+              <Text
+                color={colors.primary}
+                sx={{ minWidth: ["72px"] }}
+                fontWeight={600}
+              >
                 {step.when}
               </Text>
-              <Text color={colors.dark1}>{step.what}</Text>
+              <Text color={colors.dark1} width={["auto", "280px"]}>
+                {step.what}
+              </Text>
             </Flex>
           ))}
         </Box>
       </Box>
-      <Wave />
+      <Split inverted />
     </Flex>
   );
 };

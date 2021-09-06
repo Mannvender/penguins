@@ -27,21 +27,13 @@ const FeatureSection = ({ features }) => {
       sx={{ position: "relative" }}
     >
       <SplitShape />
-      <Heading
-        fontSize={[4, 6]}
-        fontWeight={[600]}
-        pt={[5, 0]}
-        pb={[4]}
-        color={colors.dark1}
-      >
-        Stats
-      </Heading>
       <Flex
         px={[5]}
+        pt={[6, 0]}
         flexWrap="wrap"
         justifyContent="space-around"
         width={["100%"]}
-        mb={[5]}
+        mb={[5, 0]}
       >
         {features.map((feature, i) => (
           <StyledBox

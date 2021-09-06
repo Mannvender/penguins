@@ -44,19 +44,19 @@ const TeamSection = ({ team }) => {
       id="team"
       sx={{ position: "relative" }}
     >
-      <Box>
+      <Box width="100%">
         <Heading
           fontSize={[4, 6]}
           fontWeight={[600]}
           px={[4]}
-          pb={[4]}
-          mt={[4, 2, 0]}
+          pb={[3]}
+          mt={[6, 6, 0]}
           color={colors.dark1}
           textAlign={["center"]}
         >
           Team
         </Heading>
-        <Flex px={[5]} mb={[5, 0]} flexWrap="wrap">
+        <Flex px={[5]} mb={[6, 6, 0]} flexWrap="wrap">
           {team.map((member, index) => (
             <Box flexBasis={["100%", "50%", "25%"]} p={[4]}>
               <Box height="100px">

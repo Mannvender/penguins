@@ -2,18 +2,65 @@ export const DEFAULT_ERROR_MESSAGE =
   "Something went wrong! We are looking into it.";
 
 export const ROADMAP = [
-  { when: "20%", what: "5 polar penguin drops to our early minters." },
+  { when: "10%", what: "10 people get Baskin Robbins." },
+  { when: "20%", what: "Icedrops." },
   {
-    when: "50%",
-    what: "10 penguins airdropped to most creative uses of polar penguins.",
+    when: "40%",
+    what: "Sue people who minted yetis cunning foxes & chill frogs but didn't mint us.",
+  },
+  {
+    when: "60%",
+    what: "Collab with other projects.",
   },
   {
     when: "80%",
-    what: "5k dollars donation for cleaning ocean",
+    what: "Icedrops, keeps on melting.",
   },
   {
     when: "100%",
-    what: "One of minters could use 1ETH from us.",
+    what: "Begin our journey to 1ETH",
+  },
+];
+export const DADDY_ROADMAP = [
+  {
+    what: "merch - hoodies with penguin art & stuff - not just T shirts with prints but hoodies that have penguin mouth as cap, some gourmet shit",
+    tag: "merch",
+  },
+  {
+    what: "jpeg backed by jpeg - companion fish",
+    tag: "jpg",
+  },
+  {
+    what: "well scratch that - life advice - life lessons from penguins that survived 2 extinction events - as a jpeg - like the insta posts but better",
+    tag: "life",
+  },
+  {
+    what: "comics",
+    tag: "book",
+  },
+  {
+    what: "well scratch that too - what are we nerds - these polars look like they could star in a suicide squad spinoff",
+    tag: "dc",
+  },
+  {
+    what: "climate change - not just buying senators & bribing politicians but changing the mood of the public",
+    tag: "cloud",
+  },
+  {
+    what: "bollywood movie - well technically an indie movie in India but it'll have dances mid scene, an overly ruffled plot & broken physics",
+    tag: "bollywood",
+  },
+  {
+    what: "a penguin car but without AC - read this article on why AC exacerbates climate change issue",
+    tag: "car",
+  },
+  {
+    what: "sue the guys who didn't mint us again for good measure",
+    tag: "hammer",
+  },
+  {
+    what: "think of more ways to make $s & make the floor go through the roof - idk 1/2 a million$s gives you million ways to do awesome things",
+    tag: "money",
   },
 ];
 
@@ -88,3 +135,9 @@ export const FAQS = [
       "Join our Discord or follow us on Twitter for updates. All Polar Pals minting will happen at www.polarpenguins.co with later purchases on Opensea.io",
   },
 ];
+
+export const BACK_STORY = `Year 3000, all the ice caps have melted in 2100, 
+all pudgy party PC penguins died in that one. We got hit by an icy meteor in 2400, 
+all the apes, cats, dogs died in that one. Moon left rather quickly around 2700, aliens did that. 
+Slowly earth's trajectory shifted away & planet cooled, 
+it's all a water world now & only polar penguins remain`;
