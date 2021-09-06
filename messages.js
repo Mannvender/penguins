@@ -82,12 +82,12 @@ export const FEATURES = [
     text: "ETH + that old hag gas",
   },
   {
-    title: "Own it",
-    text: "Ownership with usage rights",
+    title: "100+",
+    text: "traits",
   },
   {
     title: "IPFS",
-    text: "used for storage",
+    text: "storage",
   },
 ];
 
