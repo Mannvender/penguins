@@ -130,9 +130,26 @@ export const TEAM = [
 
 export const FAQS = [
   {
-    question: "How will Polar Penguins launch?",
+    question: "When mint?",
+    answer: "Does 19th work for you, it works for us",
+  },
+  {
+    question: "Where mint?",
+    answer: "On this site dude comeon",
+  },
+  {
+    question: "Why mint?",
     answer:
-      "Join our Discord or follow us on Twitter for updates. All Polar Pals minting will happen at www.polarpenguins.co with later purchases on Opensea.io",
+      "You see the day we announce we're coming is the day 1ETH knocks off pudgy penguins floor, now we don't have to remind you where that market cap goes to",
+  },
+  {
+    question: "Who you?",
+    answer: "We are from Bhiwani, Rohtak, Delhi, Jhajjar - India",
+  },
+  {
+    question: "Any charity?",
+    answer:
+      "We'll teach kids some coding skills & some communication & leadership skills in our villages, that's our charity - realworld impact",
   },
 ];
 

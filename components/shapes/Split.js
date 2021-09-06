@@ -19,7 +19,7 @@ const ShapeContainer = styled.div`
     width: calc(100% + 1.3px);
     height: 100px;
     @media (min-width: 1024px) {
-      height: 295px;
+      height: 235px;
     }
   }
   .shape-fill {

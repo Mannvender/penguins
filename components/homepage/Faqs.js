@@ -25,7 +25,7 @@ const FaqsSection = ({ faqs }) => {
   return (
     <Flex
       flexDirection="column"
-      height={["auto", "100%"]}
+      height={["auto", "auto"]}
       alignItems="center"
       justifyContent="center"
       role="region"
@@ -38,7 +38,7 @@ const FaqsSection = ({ faqs }) => {
       <Heading
         fontSize={[4, 6]}
         fontWeight={[600]}
-        pt={[4, 0]}
+        pt={[6]}
         pb={[4]}
         color={colors.light1}
       >
@@ -49,7 +49,7 @@ const FaqsSection = ({ faqs }) => {
         flexWrap="wrap"
         justifyContent="space-around"
         width={["100%"]}
-        mb={[5]}
+        mb={[6]}
       >
         {faqs.map((faq, i) => (
           <Box
@@ -62,6 +62,7 @@ const FaqsSection = ({ faqs }) => {
               transitionTimingFunction: "ease",
               transitionDuration: ".4s",
             }}
+            mb={[4]}
             onClick={() => handleClick(i)}
           >
             <StyledFlex justifyContent="space-between">
