@@ -36,7 +36,7 @@ const TeamSection = ({ team }) => {
   return (
     <Flex
       flexDirection="column"
-      height={["auto", "auto", "100%"]}
+      height={["auto", "auto", "100vh"]}
       alignItems="center"
       justifyContent="center"
       role="region"

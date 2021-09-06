@@ -6,7 +6,7 @@ const Backstory = ({ backStory }) => {
   const { colors } = useTheme();
   return (
     <Flex
-      height={["auto", "auto", "100%"]}
+      height={["auto", "100vh"]}
       sx={{ backgroundColor: colors.primary }}
       alignItems="center"
       justifyContent="center"

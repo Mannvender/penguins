@@ -8,7 +8,7 @@ const CarouselSection = () => {
   const { fonts, colors } = useTheme();
   return (
     <Flex
-      height={["100vh", "100%"]}
+      height={["100vh", "100vh"]}
       id="penguins"
       role="region"
       aria-label="Carousel"

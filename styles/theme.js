@@ -12,7 +12,7 @@ export default {
     dark1: "#59595A",
     dark2: "#69696a",
     light: "#FFFFFF",
-    light1: "#EAE8E5",
+    light1: "#FFFFFF",
     light2: "#D4CCC8",
   },
   breakpoints: ["576px", "768px", "992px", "1200px"],

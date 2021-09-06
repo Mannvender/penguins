@@ -23,13 +23,19 @@ const GiPenguin = styled(GiPenguinBase)`
   }
 `;
 const StyledHeader = styled.header`
+  top: 0;
+  position: unset;
+  width: 100%;
   display: flex;
   flex-direction: row;
   height: 80px;
   z-index: 1;
   box-shadow: -1px 4px 7px -1px rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
   @media (min-width: 1024px) {
     height: 100px;
+    position: fixed;
   }
 `;
 const StyledFlex = styled(Flex)`
@@ -50,7 +56,8 @@ const BottomNav = styled(Flex)`
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: ${({ theme }) => theme.colors.dark};
+  background-color: ${({ theme }) => "rgba(0,0,0,0.65)" || theme.colors.dark};
+  backdrop-filter: blur(10px);
   color: ${({ theme }) => theme.colors.light2};
   transform: translate3d(0, 0, 0);
   transform: ${(props) =>
@@ -58,7 +65,7 @@ const BottomNav = styled(Flex)`
       ? "translate3d(0,0,0)"
       : "translate3d(0,80px,0)"};
   transition: transform 0.4s ease-in-out;
-  box-shadow: -1px -4px 7px -1px rgba(0, 0, 0, 0.8);
+  box-shadow: -3px -1px 8px 0px rgba(0, 0, 0, 0.8);
 `;
 const Header = () => {
   const { colors } = useTheme();

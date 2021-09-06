@@ -8,7 +8,7 @@ const Banner = styled(Flex)`
   background-size: cover;
   background-position: 0% 25%;
   position: relative;
-  height: calc(100vh -80px);
+  /* height: calc(100vh -80px); */
 `;
 export const StyledHeading = styled(Heading)`
   text-shadow: 3px 3px ${(props) => props.theme.colors.accent2};
@@ -22,7 +22,7 @@ const BannerSection = () => {
   return (
     <>
       <Banner
-        height={["calc(100vh - 80px)", "150%"]}
+        height={["calc(100vh - 80px)", "120vh"]}
         width={["100%"]}
         justifyContent="center"
         role="region"
@@ -34,7 +34,7 @@ const BannerSection = () => {
           color={[colors.primary]}
           mb={[5]}
           textAlign="center"
-          mt={["30vh", "53%", "22%"]}
+          mt={["30vh", "40vh", "50vh"]}
           width={["300px", "auto"]}
         >
           Polar Penguins

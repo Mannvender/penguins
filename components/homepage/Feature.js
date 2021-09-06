@@ -18,7 +18,7 @@ const FeatureSection = ({ features }) => {
   return (
     <Flex
       flexDirection="column"
-      height={["auto", "100%"]}
+      height={["auto", "100vh"]}
       alignItems="center"
       justifyContent="center"
       role="region"

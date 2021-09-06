@@ -9,7 +9,7 @@ const RoadmapSection = ({ roadmap }) => {
   return (
     <Flex
       flexDirection="column"
-      height={["100vh", "100%"]}
+      height={["100vh", "100vh"]}
       alignItems="center"
       justifyContent="center"
       role="region"
