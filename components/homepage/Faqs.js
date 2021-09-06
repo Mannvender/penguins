@@ -57,8 +57,6 @@ const FaqsSection = ({ faqs }) => {
             sx={{
               backgroundColor: colors.dark,
               cursor: "pointer",
-              transitionTimingFunction: "ease",
-              transitionDuration: ".4s",
             }}
             mb={[4]}
             onClick={() => handleClick(i)}
@@ -73,31 +71,19 @@ const FaqsSection = ({ faqs }) => {
                 <AiOutlinePlus size={20} />
               )}
             </StyledFlex>
-            <Text
-              mt={[3]}
-              sx={{ display: activeFAQs.includes(i) ? "block" : "none" }}
-              color={colors.primary}
+            <Box
+              height={activeFAQs.includes(i) ? faq.height : "0px"}
+              sx={{
+                overflow: "hidden",
+                transition: "all 0.4s ease",
+              }}
             >
-              {faq.answer}
-            </Text>
+              <Text mt={[3]} color={colors.primary}>
+                {faq.answer}
+              </Text>
+            </Box>
           </Box>
         ))}
-        {/* {features.map((feature, i) => (
-          <StyledBox p={[3]} m={[3]}>
-            <StatContainer
-              justifyContent="center"
-              alignItems="center"
-              flexDirection="column"
-            >
-              <Heading color={colors.dark1} mb={[3]} fontSize={[4]}>
-                {feature.title}
-              </Heading>
-              <Text sx={{ color: colors.dark1 }} textAlign="center">
-                {feature.text}
-              </Text>
-            </StatContainer>
-          </StyledBox>
-        ))} */}
       </Flex>
     </Flex>
   );

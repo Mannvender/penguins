@@ -132,24 +132,29 @@ export const FAQS = [
   {
     question: "When mint?",
     answer: "Does 19th work for you, it works for us",
+    height: ["56px", "40px"],
   },
   {
     question: "Where mint?",
     answer: "On this site dude comeon",
+    height: ["40px"],
   },
   {
     question: "Why mint?",
     answer:
       "You see the day we announce we're coming is the day 1ETH knocks off pudgy penguins floor, now we don't have to remind you where that market cap goes to",
+    height: ["150px", "80px", "60px"],
   },
   {
     question: "Who you?",
     answer: "We are from Bhiwani, Rohtak, Delhi, Jhajjar - India",
+    height: ["56px", "40px"],
   },
   {
     question: "Any charity?",
     answer:
       "We'll teach kids some coding skills & some communication & leadership skills in our villages, that's our charity - realworld impact",
+    height: ["140px", "70px", "56px"],
   },
 ];
 
