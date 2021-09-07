@@ -133,7 +133,11 @@ const Header = () => {
               <FaTwitter fill={colors.light1} />
             </CircularBg>
           </Link>
-          <Link target="_blank" rel="noopener noreferrer">
+          <Link
+            href="discord.gg/bbCgXVJYwj"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <CircularBg justifyContent="center" alignItems="center" ml={[1]}>
               <SiDiscord fill={colors.light1} />
             </CircularBg>
