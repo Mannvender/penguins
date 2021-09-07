@@ -9,7 +9,7 @@ const Banner = styled(Flex)`
   background-position: 0% 25%;
   position: relative;
   @media (min-width: 1024px) {
-    background-position: 50% 25%;
+    background-position: 50% 95%;
   }
 `;
 export const StyledHeading = styled(Heading)`
