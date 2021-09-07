@@ -8,7 +8,7 @@ const StyledFlex = styled(Flex)`
   border-bottom: 8px solid ${(props) => props.theme.colors[props.borderColor]};
   position: relative;
   background-image: url(${(props) => props.backgroundUrl});
-  background-position: 50% 0%;
+  background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: contain;
   background-color: ${(props) => props.bgColor};

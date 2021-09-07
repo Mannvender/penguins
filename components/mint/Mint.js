@@ -1,29 +1,43 @@
-import { Box, Text } from "rebass";
+import { Box, Heading, Flex } from "rebass";
 import { useState } from "react";
 import styled, { useTheme } from "styled-components";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import { isMobile } from "react-device-detect";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import Label from "./Label";
-import Input from "./Input";
-import Button from "./Button";
-import { address, abi, price } from "smartContract";
+import Label from "../Label";
+import Input from "../Input";
+import Button from "../Button";
+import { address, abi, price } from "ethContract";
 import { DEFAULT_ERROR_MESSAGE } from "messages";
-import { LinkExternal as Link } from "./Links";
+import { LinkExternal as Link } from "../Links";
 
 export const StyledBox = styled(Box)`
-  background-repeat: no-repeat;
-  background-position: center center;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.8);
+    filter: blur(10px);
+    z-index: -1;
+  }
+  position: relative;
+  height: max-content;
+  min-width: 40% !important;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  border-radius: 3px;
   @media (min-width: 1024px) {
-    border: 1px solid ${({ theme }) => theme.colors.primary};
   }
 `;
 
-const MintWidget = ({ ethAddress }) => {
+const MintSection = ({ ethAddress }) => {
   const { colors } = useTheme();
   const router = useRouter();
-  const [amount, setAmount] = useState(4);
+  const [amount, setAmount] = useState(8);
 
   const handleClick = async () => {
     const web3 = window.web3;
@@ -31,10 +45,8 @@ const MintWidget = ({ ethAddress }) => {
       toast.error("Please connect your wallet.");
       if (isMobile) router.push("/mint#connect-wallet");
     } else {
-      console.log("else---");
       try {
         const contract = new web3.eth.Contract(abi, address);
-        // console.log(contract.methods, '--------methids--------')
         await contract.methods
           .mintKoalas(ethAddress, amount)
           .send(
@@ -72,57 +84,52 @@ const MintWidget = ({ ethAddress }) => {
   };
 
   return (
-    <StyledBox p={[0, 3]}>
+    <StyledBox p={[3]}>
       <Box my={[1]} textAlign="center">
-        <Label htmlFor="mint_amount">How many koalas? (18max/txn)</Label>
+        <Heading
+          fontSize={[5, 6]}
+          fontWeight={[600]}
+          px={[4]}
+          pb={[3]}
+          color={colors.dark1}
+          textAlign={["center"]}
+        >
+          Mint
+        </Heading>
+        {/* <Label htmlFor="amount">How many? (20max/txn)</Label> */}
       </Box>
       <Box
         sx={{
-          borderBottom: `1px solid ${colors.dark2}`,
+          border: `1px solid ${colors.dark2}`,
+          borderRadius: "64px",
           fontSize: [4, 5],
         }}
         mb={[4]}
       >
         <Input
-          id="mint_amount"
+          id="amount"
           name="amount"
           type="number"
           value={amount}
-          max={18}
+          max={20}
           min={1}
-          placeholder="Enter amount"
+          placeholder="How many?"
           style={{ width: "100%" }}
           onChange={handleChange}
         />
       </Box>
-      <Button
-        color={colors.dark1}
-        bgColor={colors.primary}
-        onClick={handleClick}
-        disabled={!Boolean(amount)}
-      >
-        Mint
-      </Button>
-      <Box mt={[3]} textAlign="center">
-        <Link
-          href="https://etherscan.io/address/0x205c2901af5b76c1a619d3c252a49368ad6055cb"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          target="_blank"
-          rel="noopener noreferrer"
+      <Flex justifyContent="center" mb={[3]}>
+        <Button
+          style={{ width: "100%" }}
+          color={colors.light}
+          onClick={handleClick}
+          disabled={!Boolean(amount)}
         >
-          <FaExternalLinkAlt size="12px" />
-          <Text fontSize={[1]} marginLeft={[2]}>
-            Take me to Contract
-          </Text>
-        </Link>
-      </Box>
+          Mint
+        </Button>
+      </Flex>
     </StyledBox>
   );
 };
 
-export default MintWidget;
+export default MintSection;
