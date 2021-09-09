@@ -94,9 +94,8 @@ const MintSection = ({ ethAddress }) => {
           color={colors.dark1}
           textAlign={["center"]}
         >
-          Mint
+          Mint (20 max/txn)
         </Heading>
-        {/* <Label htmlFor="amount">How many? (20max/txn)</Label> */}
       </Box>
       <Box
         sx={{

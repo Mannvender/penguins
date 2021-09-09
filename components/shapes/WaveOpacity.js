@@ -12,7 +12,7 @@ const ShapeContainer = styled.div`
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 80px;
+    height: 40px;
     @media (min-width: 1024px) {
       height: ${(props) => props.height || 150}px;
     }

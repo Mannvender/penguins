@@ -11,7 +11,6 @@ import {
 import { AiOutlineQuestion, AiOutlineRocket } from "react-icons/ai";
 import { SiDiscord } from "react-icons/si";
 import { FaTwitter } from "react-icons/fa";
-import { BiRocket } from "react-icons/bi";
 import NavLink from "next/link";
 import Button from "components/Button";
 import { LinkExternal as Link } from "components/Links";
