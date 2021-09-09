@@ -14,7 +14,6 @@ const FaqsSection = ({ faqs }) => {
   const [activeFAQs, setActiveFAQs] = useState([]);
 
   const handleClick = (id) => {
-    console.log("clicked");
     if (activeFAQs.includes(id)) {
       setActiveFAQs(activeFAQs.filter((item) => item !== id));
     } else {

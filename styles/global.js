@@ -26,6 +26,10 @@ export default () => {
         a:hover {
           color: ${Theme.colors.dark};
         }
+        .underlined-link {
+          text-decoration: underline;
+          color: ${Theme.colors.accent1};
+        }
         .gray-filter {
           filter: grayscale(1);
         }

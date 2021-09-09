@@ -71,9 +71,11 @@ const DaddyRoadmapSection = ({ roadmap }) => {
               >
                 {renderIcon(step.tag)}
               </Text>
-              <Text color={colors.dark1} width={["auto", "auto"]}>
-                {step.what}
-              </Text>
+              <Text
+                color={colors.dark1}
+                width={["auto", "auto"]}
+                dangerouslySetInnerHTML={{ __html: step.what }}
+              ></Text>
             </Flex>
           ))}
         </Box>

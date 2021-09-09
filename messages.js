@@ -51,7 +51,9 @@ export const DADDY_ROADMAP = [
     tag: "bollywood",
   },
   {
-    what: "a penguin car but without AC - read this article on why AC exacerbates climate change issue",
+    what: `a penguin convertible car - read 
+    <a target='_blank' rel='noopener noreferrer' href='https://www.scientificamerican.com/article/how-to-prevent-air-conditioners-from-heating-the-planet/' class='underlined-link'>this article</a>
+    on why AC exacerbates climate change issue`,
     tag: "car",
   },
   {
@@ -147,14 +149,16 @@ export const FAQS = [
   },
   {
     question: "Who you?",
-    answer: "We are from Bhiwani, Rohtak, Delhi, Jhajjar - India",
-    height: ["56px", "40px"],
+    answer:
+      "Developers, NFT enthusiasts & Artists from Bhiwani, Rohtak, Delhi, Jhajjar - India",
+    height: ["90px", "50px", "40px"],
   },
   {
     question: "Any charity?",
-    answer:
-      "We'll teach kids some coding skills & some communication & leadership skills in our villages, that's our charity - realworld impact",
-    height: ["140px", "70px", "56px"],
+    answer: `We'll teach kids some coding skills & some communication & leadership skills in our villages,
+    that's our charity - realworld impact. Also help a 60yr old dadi (granny) to make a crypto project, maybe on solana or Ada,
+    most likely ETH- promote ease of crypto to our soil fam- building up a tech hub in our area would be cool`,
+    height: ["260px", "120px", "72px"],
   },
 ];
 

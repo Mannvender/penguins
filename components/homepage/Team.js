@@ -33,7 +33,6 @@ const TeamSection = ({ team }) => {
     opacity: 1,
     config: { mass: 5, tension: 350, friction: 40 },
   }));
-  console.log(props);
   return (
     <Flex
       flexDirection="column"
