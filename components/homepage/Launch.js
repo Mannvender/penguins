@@ -5,7 +5,7 @@ import Button from "components/Button";
 import Link from "next/link";
 import SplitShape from "components/shapes/Split";
 
-const LaunchInfoSection = ({ mintDate, dateOptions }) => {
+const LaunchInfoSection = ({ mintDate, dateOptions, isMintLinkVisible }) => {
   const { colors } = useTheme();
   return (
     <Flex
@@ -36,11 +36,13 @@ const LaunchInfoSection = ({ mintDate, dateOptions }) => {
           {mintDate.toLocaleTimeString()}
         </Text>
         <Flex justifyContent="center">
-          <Link href="/mint">
-            <Button color={colors.light1} bgColor={colors.accent1}>
-              Let's mint
-            </Button>
-          </Link>
+          {isMintLinkVisible && (
+            <Link href="/mint">
+              <Button color={colors.light1} bgColor={colors.accent1}>
+                Let's mint
+              </Button>
+            </Link>
+          )}
         </Flex>
       </Box>
     </Flex>

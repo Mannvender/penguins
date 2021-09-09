@@ -17,6 +17,7 @@ import {
   ROADMAP,
   MINT_DATE,
   DATE_OPTIONS,
+  IS_MINT_LINK_VISIBLE,
   TEAM,
   FAQS,
   BACK_STORY,
@@ -32,7 +33,11 @@ const sections = [
   <RoadmapSection roadmap={ROADMAP} />,
   <DaddyRoadmapSection roadmap={DADDY_ROADMAP} />,
   <FaqsSection faqs={FAQS} />,
-  <LaunchInfoSection mintDate={MINT_DATE} dateOptions={DATE_OPTIONS} />,
+  <LaunchInfoSection
+    mintDate={MINT_DATE}
+    dateOptions={DATE_OPTIONS}
+    isMintLinkVisible={IS_MINT_LINK_VISIBLE}
+  />,
   <Footer />,
 ];
 const Index = () => {

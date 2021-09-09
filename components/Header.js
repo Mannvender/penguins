@@ -8,13 +8,15 @@ import {
   GiRoad,
   GiThorHammer,
 } from "react-icons/gi";
-import { AiOutlineQuestion } from "react-icons/ai";
+import { AiOutlineQuestion, AiOutlineRocket } from "react-icons/ai";
 import { SiDiscord } from "react-icons/si";
 import { FaTwitter } from "react-icons/fa";
+import { BiRocket } from "react-icons/bi";
 import NavLink from "next/link";
 import Button from "components/Button";
 import { LinkExternal as Link } from "components/Links";
 import useScroll from "hooks/scroll";
+import { IS_MINT_LINK_VISIBLE } from "messages";
 
 const GiPenguin = styled(GiPenguinBase)`
   cursor: pointer;
@@ -81,8 +83,8 @@ const Header = () => {
         return <GiRoad size={24} />;
       case LINKS[4].label:
         return <AiOutlineQuestion size={24} />;
-      // case LINKS[4].label:
-      //   return <RiRocket2Line size={24} />;
+      case LINKS[5].label:
+        return <AiOutlineRocket size={24} />;
       default:
         break;
     }
@@ -118,11 +120,13 @@ const Header = () => {
           px={[3]}
         >
           <Box display={["none", "initial"]}>
-            <NavLink href="/mint#mint">
-              <Button bgColor={colors.dark1} color={colors.light1}>
-                Mint
-              </Button>
-            </NavLink>
+            {IS_MINT_LINK_VISIBLE && (
+              <NavLink href="/mint#mint">
+                <Button bgColor={colors.dark1} color={colors.light1}>
+                  Mint
+                </Button>
+              </NavLink>
+            )}
           </Box>
           <Link
             href="https://twitter.com/PolarPenguinNFT"
@@ -134,7 +138,7 @@ const Header = () => {
             </CircularBg>
           </Link>
           <Link
-            href="discord.gg/bbCgXVJYwj"
+            href="https://discord.gg/bbCgXVJYwj"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -170,16 +174,18 @@ const Header = () => {
             </Flex>
           </NavLink>
         ))}
-        <NavLink href="/mint" py={[1]}>
-          <Flex
-            flexDirection="column"
-            alignItems="center"
-            sx={{ boxShadow: "none" }}
-          >
-            <GiThorHammer size={24} />
-            Mint
-          </Flex>
-        </NavLink>
+        {IS_MINT_LINK_VISIBLE && (
+          <NavLink href="/mint" py={[1]}>
+            <Flex
+              flexDirection="column"
+              alignItems="center"
+              sx={{ boxShadow: "none" }}
+            >
+              <GiThorHammer size={24} />
+              Mint
+            </Flex>
+          </NavLink>
+        )}
       </BottomNav>
     </>
   );

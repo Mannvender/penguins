@@ -66,13 +66,14 @@ export const DADDY_ROADMAP = [
   },
 ];
 
-export const MINT_DATE = new Date("2021-09-19T15:00:00.000+00:00");
+export const MINT_DATE = new Date("2021-09-19T16:00:00.000+00:00");
 export const DATE_OPTIONS = {
   weekday: "long",
   year: "numeric",
   month: "long",
   day: "numeric",
 };
+export const IS_MINT_LINK_VISIBLE = false;
 
 export const FEATURES = [
   {
@@ -99,7 +100,7 @@ export const LINKS = [
   { href: "/#team", label: "Team", showOnMobile: false },
   { href: "/#roadmap", label: "Roadmap", showOnMobile: true },
   { href: "/#faqs", label: "FAQs", showOnMobile: true },
-  { href: "/#launch", label: "Launch", showOnMobile: false },
+  { href: "/#launch", label: "Launch", showOnMobile: true },
 ];
 
 export const TEAM = [
