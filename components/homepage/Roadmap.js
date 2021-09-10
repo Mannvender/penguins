@@ -48,7 +48,7 @@ const TextContainer = styled(Box)`
     z-index: -1;
   }
 `;
-const RoadmapSection = ({ roadmap, roadmapIcebergs }) => {
+const RoadmapSection = ({ roadmap }) => {
   const { colors } = useTheme();
   return (
     <Flex
@@ -74,16 +74,17 @@ const RoadmapSection = ({ roadmap, roadmapIcebergs }) => {
           Roadmap
         </Heading>
         <Grid>
-          {roadmapIcebergs.map((iceberg, i) => (
+          {roadmap.map((step, i) => (
             <FloatingBox
               key={i}
-              sx={{ gridArea: `iceberg${i + 1}` }}
+              sx={{ gridArea: `iceberg${i + 1}`, justifySelf: "center" }}
               delay={0.4 * i}
+              width={step.icebergWidth}
             >
               <Image
                 layout="fill"
-                src={iceberg}
-                alt={`ice berg ${i}`}
+                src={`/iceberg_00${i + 1}.png`}
+                alt={`iceberg ${i + 1}`}
                 quality="70"
               />
             </FloatingBox>

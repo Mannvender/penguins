@@ -2,32 +2,28 @@ export const DEFAULT_ERROR_MESSAGE =
   "Something went wrong! We are looking into it.";
 
 export const ROADMAP = [
-  { when: "10", what: "10 people get Baskin Robbins." },
-  { when: "20", what: "Icedrops." },
+  { when: "10", what: "10 people get Baskin Robbins.", icebergWidth: "36%" },
+  { when: "20", what: "Icedrops.", icebergWidth: "45%" },
   {
     when: "40",
     what: "Sue people who minted yetis cunning foxes & chill frogs but didn't mint us.",
+    icebergWidth: "100%",
   },
   {
     when: "60",
     what: "Collab with other projects.",
+    icebergWidth: "63%",
   },
   {
     when: "80",
     what: "Icedrops, keeps on melting.",
+    icebergWidth: "65%",
   },
   {
     when: "100",
     what: "Begin our journey to 1ETH",
+    icebergWidth: "70%",
   },
-];
-export const ROADMAP_ICEBERGS = [
-  `https://www.sappyseals.io/img/l1.fe7975be.png`,
-  `https://www.sappyseals.io/img/l2.69f8f42b.png`,
-  `https://www.sappyseals.io/img/l2.69f8f42b.png`,
-  `https://www.sappyseals.io/img/l2.69f8f42b.png`,
-  `https://www.sappyseals.io/img/l3.820136fa.png`,
-  `https://www.sappyseals.io/img/l4.b2913a19.png`,
 ];
 export const DADDY_ROADMAP = [
   {

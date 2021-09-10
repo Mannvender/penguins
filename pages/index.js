@@ -22,7 +22,6 @@ import {
   FAQS,
   BACK_STORY,
   DADDY_ROADMAP,
-  ROADMAP_ICEBERGS,
 } from "messages";
 
 const sections = [
@@ -31,7 +30,7 @@ const sections = [
   <CarouselSection />,
   <FeatureSection features={FEATURES} />,
   <TeamSection team={TEAM} />,
-  <RoadmapSection roadmap={ROADMAP} roadmapIcebergs={ROADMAP_ICEBERGS} />,
+  <RoadmapSection roadmap={ROADMAP} />,
   <DaddyRoadmapSection roadmap={DADDY_ROADMAP} />,
   <FaqsSection faqs={FAQS} />,
   <LaunchInfoSection

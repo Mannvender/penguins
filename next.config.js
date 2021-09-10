@@ -19,7 +19,7 @@ const SentryWebpackPluginOptions = {
 
 const moduleExports = {
   images: {
-    domains: ["www.sappyseals.io"],
+    domains: [],
   },
 };
 
