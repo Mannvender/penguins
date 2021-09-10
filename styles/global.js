@@ -28,7 +28,7 @@ export default () => {
         }
         .underlined-link {
           text-decoration: underline;
-          color: ${Theme.colors.accent1};
+          color: ${Theme.colors.primary};
         }
         .gray-filter {
           filter: grayscale(1);
