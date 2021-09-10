@@ -21,6 +21,7 @@ const FloatingBox = styled(Box)`
   position: relative;
   min-height: 150px;
   animation: floatberg 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px ${(props) => props.theme.colors.dark1});
   animation-delay: ${(props) => props.delay}s;
   @keyframes floatberg {
     0% {
@@ -44,7 +45,7 @@ const TextContainer = styled(Box)`
     right: -130%;
     width: 230%;
     height: 2px;
-    border-bottom: 2px solid ${(props) => props.theme.colors.dark2};
+    border-bottom: 1px solid ${(props) => props.theme.colors.dark1};
     z-index: -1;
   }
 `;
