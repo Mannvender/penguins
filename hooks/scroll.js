@@ -13,8 +13,8 @@ export function useScroll() {
 
   const listener = (e) => {
     setBodyOffset(document?.body.getBoundingClientRect());
-    setScrollDirection(lastScrollTop > -bodyOffset.top ? "down" : "up");
-    setLastScrollTop(-bodyOffset.top);
+    setScrollDirection(lastScrollTop > -bodyOffset?.top ? "down" : "up");
+    setLastScrollTop(-bodyOffset?.top);
   };
 
   useEffect(() => {
