@@ -30,7 +30,7 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: row;
   height: 80px;
-  z-index: 1;
+  z-index: 2;
   box-shadow: -1px 4px 7px -1px rgba(0, 0, 0, 0.8);
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(5px);
