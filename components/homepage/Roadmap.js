@@ -96,7 +96,7 @@ const RoadmapSection = ({ roadmap, roadmapIcebergs }) => {
               textAlign={i % 2 === 0 ? "left" : "right"}
             >
               <Heading color={colors.primary} fontWeight={600} mb={[2]}>
-                {step.when}
+                {step.when}%
               </Heading>
               <Text color={colors.dark1}>{step.what}</Text>
             </TextContainer>
@@ -110,7 +110,7 @@ const RoadmapSection = ({ roadmap, roadmapIcebergs }) => {
                 sx={{ minWidth: ["72px"] }}
                 fontWeight={600}
               >
-                {step.when}
+                {step.when}%
               </Text>
               <Text color={colors.dark1} width={["auto", "280px"]}>
                 {step.what}
