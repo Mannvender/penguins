@@ -41,7 +41,7 @@ const BannerSection = () => {
         >
           Polar Penguins
         </StyledHeading>
-        <WaveOpacityShape height="110" />
+        <WaveOpacityShape height="60" />
       </Banner>
     </>
   );

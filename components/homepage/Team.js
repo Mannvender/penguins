@@ -3,6 +3,7 @@ import { Heading, Box, Flex, Text } from "rebass";
 import styled, { useTheme } from "styled-components";
 import Image from "next/image";
 import { useSprings, animated } from "react-spring";
+import { IceCss } from "components/mint/Mint";
 
 const StyledFlex = styled(Flex)`
   border-bottom: 8px solid ${(props) => props.theme.colors[props.borderColor]};
@@ -17,6 +18,9 @@ const StyledFlex = styled(Flex)`
       display: none;
     }
   }
+`;
+const IceFlex = styled(Flex)`
+  ${IceCss}
 `;
 const calc = (x, y) => [
   -(y - window.innerHeight / 2) / 20,
@@ -34,7 +38,7 @@ const TeamSection = ({ team }) => {
     config: { mass: 5, tension: 350, friction: 40 },
   }));
   return (
-    <Flex
+    <IceFlex
       flexDirection="column"
       height={["auto"]}
       alignItems="center"
@@ -42,7 +46,7 @@ const TeamSection = ({ team }) => {
       role="region"
       aria-label="Team"
       id="team"
-      sx={{ position: "relative" }}
+      backgroundColor={colors.primary}
     >
       <Box width="100%" my={[6]}>
         <Heading
@@ -50,7 +54,7 @@ const TeamSection = ({ team }) => {
           fontWeight={[600]}
           px={[4]}
           pb={[3]}
-          color={colors.dark1}
+          color={colors.light}
           textAlign={["center"]}
         >
           Team
@@ -67,7 +71,11 @@ const TeamSection = ({ team }) => {
                 >
                   {member.name}
                 </Text>
-                <Text fontSize={[1, 2]} textAlign={["center", "left"]}>
+                <Text
+                  fontSize={[1, 2]}
+                  color={colors.light2}
+                  textAlign={["center", "left"]}
+                >
                   {member.description}
                 </Text>
               </Box>
@@ -120,7 +128,7 @@ const TeamSection = ({ team }) => {
           ))}
         </Flex>
       </Box>
-    </Flex>
+    </IceFlex>
   );
 };
 

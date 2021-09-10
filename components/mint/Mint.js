@@ -1,6 +1,6 @@
 import { Box, Heading, Flex } from "rebass";
 import { useState } from "react";
-import styled, { useTheme } from "styled-components";
+import styled, { useTheme, css } from "styled-components";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import { isMobile } from "react-device-detect";
@@ -12,7 +12,7 @@ import { address, abi, price } from "ethContract";
 import { DEFAULT_ERROR_MESSAGE } from "messages";
 import { LinkExternal as Link } from "../Links";
 
-export const StyledBox = styled(Box)`
+export const IceCss = css`
   &:before {
     content: "";
     position: absolute;
@@ -24,11 +24,14 @@ export const StyledBox = styled(Box)`
     filter: blur(10px);
     z-index: -1;
   }
-  position: relative;
-  height: max-content;
-  min-width: 40% !important;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
   z-index: 1;
+  position: relative;
+`;
+const IceBox = styled(Box)`
+  ${IceCss}
+  height: max-content;
+  min-width: 40% !important;
   border-radius: 3px;
   @media (min-width: 1024px) {
   }
@@ -84,7 +87,7 @@ const MintSection = ({ ethAddress }) => {
   };
 
   return (
-    <StyledBox p={[3]}>
+    <IceBox p={[3]}>
       <Box my={[1]} textAlign="center">
         <Heading
           fontSize={[5, 6]}
@@ -127,7 +130,7 @@ const MintSection = ({ ethAddress }) => {
           Mint
         </Button>
       </Flex>
-    </StyledBox>
+    </IceBox>
   );
 };
 
