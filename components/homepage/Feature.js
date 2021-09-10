@@ -47,7 +47,12 @@ const FeatureSection = ({ features }) => {
               alignItems="center"
               flexDirection="column"
             >
-              <Heading color={colors.dark1} mb={[3]} fontSize={[4]}>
+              <Heading
+                color={colors.dark1}
+                mb={[3]}
+                fontSize={[4]}
+                textAlign="center"
+              >
                 {feature.title}
               </Heading>
               <Text sx={{ color: colors.dark1 }} textAlign="center" p={[2]}>
