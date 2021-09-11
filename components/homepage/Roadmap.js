@@ -21,7 +21,7 @@ const FloatingBox = styled(Box)`
   position: relative;
   min-height: 150px;
   animation: floatberg 5s ease-in-out infinite;
-  filter: drop-shadow(0 0 6px ${(props) => props.theme.colors.dark1});
+  filter: drop-shadow(0 0 6px ${(props) => props.theme.colors.light2});
   animation-delay: ${(props) => props.delay}s;
   @keyframes floatberg {
     0% {
@@ -45,8 +45,8 @@ const TextContainer = styled(Box)`
     right: -130%;
     width: 230%;
     height: 2px;
-    border-bottom: 1px solid ${(props) => props.theme.colors.dark1};
-    z-index: -1;
+    border-bottom: 1px solid ${(props) => props.theme.colors.light2};
+    z-index: 1;
   }
 `;
 const RoadmapSection = ({ roadmap }) => {
@@ -61,6 +61,7 @@ const RoadmapSection = ({ roadmap }) => {
       aria-label="Roadmap"
       id="roadmap"
       sx={{ position: "relative" }}
+      backgroundColor={colors.accent2}
     >
       <Split />
       <Box my={[6]} px={[5]}>
@@ -69,7 +70,7 @@ const RoadmapSection = ({ roadmap }) => {
           fontWeight={[600]}
           px={[4]}
           pb={[4]}
-          color={colors.dark1}
+          color={colors.light}
           textAlign={["center"]}
         >
           Roadmap
@@ -97,10 +98,12 @@ const RoadmapSection = ({ roadmap }) => {
               mx={[4]}
               textAlign={i % 2 === 0 ? "left" : "right"}
             >
-              <Heading color={colors.primary} fontWeight={600} mb={[2]}>
+              <Heading color={colors.light} fontWeight={600} mb={[2]}>
                 {step.when}%
               </Heading>
-              <Text color={colors.dark1}>{step.what}</Text>
+              <Text color={colors.light2} mb={[2]}>
+                {step.what}
+              </Text>
             </TextContainer>
           ))}
         </Grid>
@@ -108,13 +111,13 @@ const RoadmapSection = ({ roadmap }) => {
           {roadmap.map((step, i) => (
             <Flex mb={[4, 3]} key={i} alignItems="center">
               <Text
-                color={colors.primary}
+                color={colors.light}
                 sx={{ minWidth: ["72px"] }}
                 fontWeight={600}
               >
                 {step.when}%
               </Text>
-              <Text color={colors.dark1} width={["auto", "280px"]}>
+              <Text color={colors.light2} width={["auto", "280px"]}>
                 {step.what}
               </Text>
             </Flex>
