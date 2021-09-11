@@ -167,7 +167,7 @@ export const FAQS = [
   },
 ];
 
-export const BACK_STORY = `Year 3000, all the ice caps have melted in 2100, 
+export const BACK_STORY = `Year 3000, wwwait we gotta have a recap. All the ice caps melted in 2100, 
 all pudgy party PC penguins died in that one. We got hit by an icy meteor in 2400, 
 all the apes, cats, dogs died in that one. Moon left rather quickly around 2700, aliens did that. 
 Slowly earth's trajectory shifted away & planet cooled, 

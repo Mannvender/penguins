@@ -117,7 +117,7 @@ const TeamSection = ({ team }) => {
                       <Image
                         layout="fill"
                         src={"/pin_02.png"}
-                        alt={`band-aid`}
+                        alt={"pin"}
                         quality="70"
                       />
                     </Box>
