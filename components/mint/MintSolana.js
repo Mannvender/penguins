@@ -1,8 +1,9 @@
 import { Box, Heading, Flex } from "rebass";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import styled, { useTheme, css } from "styled-components";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
 import { isMobile } from "react-device-detect";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Label from "../Label";
@@ -11,6 +12,22 @@ import Button from "../Button";
 import { address, abi, price } from "ethContract";
 import { DEFAULT_ERROR_MESSAGE } from "messages";
 import { LinkExternal as Link } from "../Links";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+const WalletConnectionProvider = dynamic(
+  () => import("components/WalletConnectionProvider"),
+  {
+    ssr: false,
+  }
+);
+
+// const treasury = new anchor.web3.PublicKey(process.env.TREASURY_ADDRESS);
+// const config = new anchor.web3.PublicKey(process.env.CANDY_MACHINE_CONFIG);
+// const candyMachineId = new anchor.web3.PublicKey(process.env.CANDY_MACHINE_ID);
+// const network = process.env.SOLANA_NETWORK;
+// const rpcHost = process.env.SOLANA_RPC_HOST;
+// const connection = new anchor.web3.Connection(rpcHost);
+// const startDateSeed = parseInt(process.env.CANDY_START_DATE, 10);
+// const txTimeout = 30000; // milliseconds (confirm this works for your project)
 
 export const IceCss = css`
   &:before {
@@ -87,50 +104,53 @@ const MintSection = ({ ethAddress }) => {
   };
 
   return (
-    <IceBox p={[3]}>
-      <Box my={[1]} textAlign="center">
-        <Heading
-          fontSize={[5, 6]}
-          fontWeight={[600]}
-          px={[4]}
-          pb={[3]}
-          color={colors.dark1}
-          textAlign={["center"]}
+    <WalletConnectionProvider>
+      <IceBox p={[3]}>
+        <WalletMultiButton />
+        <Box my={[1]} textAlign="center">
+          <Heading
+            fontSize={[5, 6]}
+            fontWeight={[600]}
+            px={[4]}
+            pb={[3]}
+            color={colors.dark1}
+            textAlign={["center"]}
+          >
+            Solana (20 max/txn)
+          </Heading>
+        </Box>
+        <Box
+          sx={{
+            border: `1px solid ${colors.dark2}`,
+            borderRadius: "64px",
+            fontSize: [4, 5],
+          }}
+          mb={[4]}
         >
-          Mint (20 max/txn)
-        </Heading>
-      </Box>
-      <Box
-        sx={{
-          border: `1px solid ${colors.dark2}`,
-          borderRadius: "64px",
-          fontSize: [4, 5],
-        }}
-        mb={[4]}
-      >
-        <Input
-          id="amount"
-          name="amount"
-          type="number"
-          value={amount}
-          max={20}
-          min={1}
-          placeholder="How many?"
-          style={{ width: "100%" }}
-          onChange={handleChange}
-        />
-      </Box>
-      <Flex justifyContent="center" mb={[3]}>
-        <Button
-          style={{ width: "100%" }}
-          color={colors.light}
-          onClick={handleClick}
-          disabled={!Boolean(amount)}
-        >
-          Mint
-        </Button>
-      </Flex>
-    </IceBox>
+          <Input
+            id="amount"
+            name="amount"
+            type="number"
+            value={amount}
+            max={20}
+            min={1}
+            placeholder="How many?"
+            style={{ width: "100%" }}
+            onChange={handleChange}
+          />
+        </Box>
+        <Flex justifyContent="center" mb={[3]}>
+          <Button
+            style={{ width: "100%" }}
+            color={colors.light}
+            onClick={handleClick}
+            disabled={!Boolean(amount)}
+          >
+            Mint
+          </Button>
+        </Flex>
+      </IceBox>
+    </WalletConnectionProvider>
   );
 };
 

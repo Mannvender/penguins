@@ -3,7 +3,7 @@ import { Heading, Box, Flex, Text } from "rebass";
 import styled, { useTheme } from "styled-components";
 import Image from "next/image";
 import { useSprings, animated } from "react-spring";
-import { IceCss } from "components/mint/Mint";
+import { IceCss } from "components/mint/MintEth";
 
 const StyledFlex = styled(Flex)`
   border-bottom: 8px solid ${(props) => props.theme.colors[props.borderColor]};

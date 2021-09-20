@@ -5,7 +5,8 @@ import { useTheme } from "styled-components";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
-import MintSection from "components/mint/Mint";
+import MintEthSection from "components/mint/MintEth";
+import MintSolanaSection from "components/mint/MintSolana";
 import { MINT_DATE, DATE_OPTIONS } from "messages";
 
 const Index = () => {
@@ -19,11 +20,13 @@ const Index = () => {
         </Box>
         <Flex
           height={["100vh"]}
+          flexDirection={["column", "row"]}
           backgroundColor={colors.primary}
           alignItems="center"
-          justifyContent="center"
+          justifyContent="space-evenly"
         >
-          <MintSection date={MINT_DATE} dateOptions={DATE_OPTIONS} />
+          <MintEthSection date={MINT_DATE} dateOptions={DATE_OPTIONS} />
+          <MintSolanaSection date={MINT_DATE} dateOptions={DATE_OPTIONS} />
         </Flex>
         <Footer />
       </Box>
