@@ -14,6 +14,7 @@ export default {
     light: "#FFFFFF",
     light1: "#FFFFFF",
     light2: "#D4CCC8",
+    error: "#ED4337.",
   },
   breakpoints: ["576px", "768px", "992px", "1200px"],
   space: [0, 4, 8, 16, 32, 64, 128, 256],

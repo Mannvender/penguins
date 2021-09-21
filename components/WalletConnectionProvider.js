@@ -11,7 +11,6 @@ import {
 } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
-import * as anchor from "@project-serum/anchor";
 
 const WalletConnectionProvider = ({ children }) => {
   // Can be set to 'devnet', 'testnet', or 'mainnet-beta'

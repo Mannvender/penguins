@@ -2,11 +2,15 @@ import React from "react";
 import { Box, Flex } from "rebass";
 import Particles from "react-particles-js";
 import { useTheme } from "styled-components";
+import dynamic from "next/dynamic";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
 import MintEthSection from "components/mint/MintEth";
-import MintSolanaSection from "components/mint/MintSolana";
+// import MintSolanaSection from "components/mint/MintSolana";
+const MintSolanaSection = dynamic(() => import("components/mint/MintSolana"), {
+  ssr: false,
+});
 import { MINT_DATE, DATE_OPTIONS } from "messages";
 
 const Index = () => {
