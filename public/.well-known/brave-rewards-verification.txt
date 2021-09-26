@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: polarpenguins.co
+Token: e4bd8c7a9007f37af2d343fbf0f16d953a19a9b5fa21727dcc5a8b1af48017f8
