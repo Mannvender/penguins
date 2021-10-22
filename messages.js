@@ -55,7 +55,7 @@ export const DADDY_ROADMAP = [
     tag: "bollywood",
   },
   {
-    what: `a penguin convertible car - read 
+    what: `a penguin convertible car - read
     <a target='_blank' rel='noopener noreferrer' href='https://www.scientificamerican.com/article/how-to-prevent-air-conditioners-from-heating-the-planet/' class='underlined-link'>this article</a>
     on why AC exacerbates climate change issue`,
     tag: "car",
@@ -70,7 +70,7 @@ export const DADDY_ROADMAP = [
   },
 ];
 
-export const MINT_DATE = new Date("2021-10-03T16:00:00.000+00:00");
+export const MINT_DATE = new Date("2021-10-26T16:00:00.000+00:00");
 export const DATE_OPTIONS = {
   weekday: "long",
   year: "numeric",
@@ -171,8 +171,8 @@ export const FAQS = [
   },
 ];
 
-export const BACK_STORY = `Year 3000, wwwait we gotta have a recap. All the ice caps melted in 2100, 
-all pudgy party PC penguins died in that one. We got hit by an icy meteor in 2400, 
-all the apes, cats, dogs died in that one. Moon left rather quickly around 2700, aliens did that. 
-Slowly earth's trajectory shifted away & planet cooled, 
+export const BACK_STORY = `Year 3000, wwwait we gotta have a recap. All the ice caps melted in 2100,
+all pudgy party PC penguins died in that one. We got hit by an icy meteor in 2400,
+all the apes, cats, dogs died in that one. Moon left rather quickly around 2700, aliens did that.
+Slowly earth's trajectory shifted away & planet cooled,
 it's all a water world now & only polar penguins remain`;
