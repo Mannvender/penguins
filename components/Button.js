@@ -13,6 +13,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   padding: 8px 24px;
   font-size: 1rem;
+  font-weight: 600;
   transition: background-color 0.4s ease-in-out;
   background-image: radial-gradient(
     ${(props) => props.theme.colors.dark1} 2px,

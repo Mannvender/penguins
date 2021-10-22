@@ -81,9 +81,9 @@ const Header = () => {
       //   return <GiInfo size={24} />;
       case LINKS[3].label:
         return <GiRoad size={24} />;
-      case LINKS[4].label:
-        return <AiOutlineQuestion size={24} />;
       case LINKS[5].label:
+        return <AiOutlineQuestion size={24} />;
+      case LINKS[6].label:
         return <AiOutlineRocket size={24} />;
       default:
         break;
