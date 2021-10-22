@@ -126,6 +126,8 @@ const MintSection = ({ ethAddress }) => {
           color={colors.light}
           onClick={handleClick}
           disabled={!Boolean(amount)}
+          color1={colors.accent4}
+          color2={colors.accent5}
         >
           Mint
         </Button>

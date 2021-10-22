@@ -29,7 +29,6 @@ const Index = () => {
           alignItems="center"
           justifyContent="space-evenly"
         >
-          <MintEthSection date={MINT_DATE} dateOptions={DATE_OPTIONS} />
           <MintSolanaSection date={MINT_DATE} dateOptions={DATE_OPTIONS} />
         </Flex>
         <Footer />

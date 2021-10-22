@@ -65,8 +65,13 @@ const LaunchInfoSection = ({ mintDate, dateOptions, isMintLinkVisible }) => {
       return <></>;
     } else {
       return (
-        <Link href="/mint">
-          <Button color={colors.light1} bgColor={colors.accent1}>
+        <Link href="/minteth">
+          <Button
+            color={colors.light1}
+            bgColor={colors.accent1}
+            color1={colors.accent4}
+            color2={colors.accent5}
+          >
             Mint with Eth
           </Button>
         </Link>
@@ -79,8 +84,13 @@ const LaunchInfoSection = ({ mintDate, dateOptions, isMintLinkVisible }) => {
       return <></>;
     } else {
       return (
-        <Link href="/mint">
-          <Button color={colors.light1} bgColor={colors.accent1}>
+        <Link href="/mintsol">
+          <Button
+            color={colors.light1}
+            bgColor={colors.accent1}
+            color1={colors.accent1}
+            color2={colors.accent3}
+          >
             Mint with Sol
           </Button>
         </Link>

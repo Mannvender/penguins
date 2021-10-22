@@ -193,7 +193,7 @@ const MintSection = ({ ethAddress }) => {
           color={colors.dark1}
           textAlign={["center"]}
         >
-          Solana (20 max/txn)
+          Solana
         </Heading>
       </Box>
       <Box
@@ -236,6 +236,8 @@ const MintSection = ({ ethAddress }) => {
                 color={colors.light}
                 onClick={handleClick}
                 disabled={!Boolean(amount)}
+                color1={colors.accent1}
+                color2={colors.accent3}
               >
                 {isSoldOut
                   ? "Sold Out"
@@ -245,45 +247,8 @@ const MintSection = ({ ethAddress }) => {
                     : "Mint"
                   : "Not active"}
               </Button>
-              // <MintButton
-              //   disabled={isSoldOut || isMinting || !isActive}
-              //   onClick={onMint}
-              //   variant="contained"
-              // >
-              //   {isSoldOut ? (
-              //     "SOLD OUT"
-              //   ) : isActive ? (
-              //     isMinting ? (
-              //       <CircularProgress />
-              //     ) : (
-              //       "MINT"
-              //     )
-              //   ) : (
-              //     <Countdown
-              //       date={startDate}
-              //       onMount={({ completed }) =>
-              //         completed && setIsActive(true)
-              //       }
-              //       onComplete={() => setIsActive(true)}
-              //       renderer={renderCounter}
-              //     />
-              //   )}
-              // </MintButton>
             )}
           </>
-
-          {/* <Snackbar
-              open={alertState.open}
-              autoHideDuration={6000}
-              onClose={() => setAlertState({ ...alertState, open: false })}
-            >
-              <Alert
-                onClose={() => setAlertState({ ...alertState, open: false })}
-                severity={alertState.severity}
-              >
-                {alertState.message}
-              </Alert>
-            </Snackbar> */}
         </main>
       </Flex>
     </IceBox>

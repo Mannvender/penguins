@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledButton = styled.button`
   display: flex;
@@ -25,6 +25,15 @@ const StyledButton = styled.button`
   @media (min-width: 1024px) {
     font-size: 1.1rem;
   }
+  ${(props) =>
+    props.color1 &&
+    props.color2 &&
+    css`
+      background-image: radial-gradient(
+        ${props.color1} 2px,
+        ${props.color2} 1px
+      );
+    `}
 `;
 
 export default StyledButton;
