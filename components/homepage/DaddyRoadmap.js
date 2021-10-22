@@ -51,7 +51,7 @@ const DaddyRoadmapSection = ({ roadmap }) => {
       id="roadmap"
       sx={{ position: "relative" }}
     >
-      <Box my={[6]}>
+      <Box my={[6]} mb={[0 , 0]}>
         <Heading
           fontSize={[4, 6]}
           fontWeight={[600]}
@@ -80,7 +80,7 @@ const DaddyRoadmapSection = ({ roadmap }) => {
           ))}
         </Box>
       </Box>
-      <Wave />
+      {/* <Wave /> */}
     </Flex>
   );
 };

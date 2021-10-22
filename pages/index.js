@@ -7,6 +7,7 @@ import CarouselSection from "components/homepage/Carousel";
 import FeatureSection from "components/homepage/Feature";
 import RoadmapSection from "components/homepage/Roadmap";
 import DaddyRoadmapSection from "components/homepage/DaddyRoadmap";
+import DaddyRetreatSection from "components/homepage/Retreat";
 import LaunchInfoSection from "components/homepage/Launch";
 import TeamSection from "components/homepage/Team";
 import FaqsSection from "components/homepage/Faqs";
@@ -32,6 +33,7 @@ const sections = [
   <TeamSection team={TEAM} />,
   <RoadmapSection roadmap={ROADMAP} />,
   <DaddyRoadmapSection roadmap={DADDY_ROADMAP} />,
+  <DaddyRetreatSection />,
   <FaqsSection faqs={FAQS} />,
   <LaunchInfoSection
     mintDate={MINT_DATE}

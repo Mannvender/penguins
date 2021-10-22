@@ -106,6 +106,7 @@ export const LINKS = [
   { href: "/#stats", label: "Stats", showOnMobile: false },
   { href: "/#team", label: "Team", showOnMobile: false },
   { href: "/#roadmap", label: "Roadmap", showOnMobile: true },
+  { href: "/#rarities", label: "Rarities", showOnMobile: false },
   { href: "/#faqs", label: "FAQs", showOnMobile: true },
   { href: "/#launch", label: "Launch", showOnMobile: true },
 ];
