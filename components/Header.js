@@ -15,7 +15,7 @@ import NavLink from "next/link";
 import Button from "components/Button";
 import { LinkExternal as Link } from "components/Links";
 import useScroll from "hooks/scroll";
-import { IS_MINT_LINK_VISIBLE } from "messages";
+import { MINT_DATE } from "messages";
 
 const GiPenguin = styled(GiPenguinBase)`
   cursor: pointer;
@@ -71,6 +71,7 @@ const BottomNav = styled(Flex)`
 const Header = () => {
   const { colors } = useTheme();
   const { scrollDirection } = useScroll();
+  const isMintActive = MINT_DATE < new Date();
 
   const renderIcon = (label) => {
     switch (label) {
@@ -119,7 +120,7 @@ const Header = () => {
           px={[3]}
         >
           <Box display={["none", "initial"]}>
-            {IS_MINT_LINK_VISIBLE && (
+            {isMintActive && (
               <NavLink href="/mint#mint">
                 <Button bgColor={colors.dark1} color={colors.light1}>
                   Mint
@@ -173,7 +174,7 @@ const Header = () => {
             </Flex>
           </NavLink>
         ))}
-        {IS_MINT_LINK_VISIBLE && (
+        {isMintActive && (
           <NavLink href="/mint" py={[1]}>
             <Flex
               flexDirection="column"

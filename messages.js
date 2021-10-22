@@ -77,7 +77,7 @@ export const DATE_OPTIONS = {
   month: "long",
   day: "numeric",
 };
-export const IS_MINT_LINK_VISIBLE = false;
+export const IS_MINT_LINK_VISIBLE = true;
 
 export const FEATURES = [
   {

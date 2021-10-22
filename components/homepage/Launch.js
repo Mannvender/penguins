@@ -3,9 +3,17 @@ import { Heading, Text, Flex, Box } from "rebass";
 import { useTheme } from "styled-components";
 import Countdown, { zeroPad } from "react-countdown";
 import Link from "next/link";
+import Image from "next/image";
 import Button from "components/Button";
 import SplitShape from "components/shapes/Split";
+import styled from "styled-components";
 
+const StyledBox = styled(Box)`
+  display: none;
+  @media (min-width: 800px) {
+    display: block;
+  }
+`;
 const LaunchInfoSection = ({ mintDate, dateOptions, isMintLinkVisible }) => {
   const { colors, fonts } = useTheme();
   const countdownRenderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -50,18 +58,68 @@ const LaunchInfoSection = ({ mintDate, dateOptions, isMintLinkVisible }) => {
       return <> </>;
     }
   };
+
+  const countdownRendererEth = ({ completed }) => {
+    if (!completed) {
+      // Render a completed state
+      return <></>;
+    } else {
+      return (
+        <Link href="/mint">
+          <Button color={colors.light1} bgColor={colors.accent1}>
+            Mint with Eth
+          </Button>
+        </Link>
+      );
+    }
+  };
+  const countdownRendererSol = ({ completed }) => {
+    if (!completed) {
+      // Render a completed state
+      return <></>;
+    } else {
+      return (
+        <Link href="/mint">
+          <Button color={colors.light1} bgColor={colors.accent1}>
+            Mint with Sol
+          </Button>
+        </Link>
+      );
+    }
+  };
   return (
     <Flex
+      flexWrap="wrap"
       height={["auto"]}
       sx={{ backgroundColor: colors.primary, position: "relative" }}
-      alignItems="center"
-      justifyContent="center"
+      alignItems="flex-end"
+      justifyContent="space-between"
       role="region"
       aria-label="Launch Info"
       id="launch"
     >
       <SplitShape fill="light1" />
-      <Box my={[6]}>
+      <Flex
+        p={[0]}
+        sx={{ position: "relative" }}
+        height={["600px"]}
+        flexBasis={["100%", "30%"]}
+        alignItems="center"
+        justifyContent="flex-end"
+      >
+        <Image
+          layout="fill"
+          src={"/sol_penguin.png"}
+          alt={"sol penguin"}
+          quality="70"
+          objectFit="cover"
+          objectPosition="100% 50%"
+        />
+        <Box mr={[4]} sx={{ zIndex: 1 }}>
+          <Countdown date={mintDate} renderer={countdownRendererSol} />
+        </Box>
+      </Flex>
+      <Box mt={[6]} flexBasis={["100%", "40%"]}>
         <Heading
           fontSize={[4, 6]}
           fontWeight={[600]}
@@ -70,7 +128,7 @@ const LaunchInfoSection = ({ mintDate, dateOptions, isMintLinkVisible }) => {
           color={colors.light}
           textAlign={["center"]}
         >
-          Launch
+          Mint your penguins
         </Heading>
         <Text px={[5]} mb={[3]} color={colors.light} textAlign="center">
           On <br />
@@ -80,15 +138,41 @@ const LaunchInfoSection = ({ mintDate, dateOptions, isMintLinkVisible }) => {
         </Text>
         <Flex justifyContent="center">
           <Countdown date={mintDate} renderer={countdownRenderer} />
-          {isMintLinkVisible && (
-            <Link href="/mint">
-              <Button color={colors.light1} bgColor={colors.accent1}>
-                Let's mint
-              </Button>
-            </Link>
-          )}
         </Flex>
+        <StyledBox
+          sx={{ position: "relative" }}
+          height={["436px"]}
+          width="100%"
+        >
+          <Image
+            layout="fill"
+            src={"/eth_sol_penguin.png"}
+            alt={"penguin"}
+            quality="70"
+            objectFit="contain"
+            objectPosition="50% 100%"
+          />
+        </StyledBox>
       </Box>
+      <Flex
+        sx={{ position: "relative" }}
+        height={["600px"]}
+        flexBasis={["100%", "30%"]}
+        alignItems="center"
+        justifyContent="flex-start"
+      >
+        <Image
+          layout="fill"
+          src={"/eth_penguin.png"}
+          alt={"eth penguin"}
+          quality="70"
+          objectFit="cover"
+          objectPosition="0% 50%"
+        />
+        <Box ml={[4]} sx={{ zIndex: 1 }}>
+          <Countdown date={mintDate} renderer={countdownRendererEth} />
+        </Box>
+      </Flex>
     </Flex>
   );
 };
