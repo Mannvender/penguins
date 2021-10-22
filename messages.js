@@ -89,6 +89,10 @@ export const FEATURES = [
     text: "+ that old hag gas",
   },
   {
+    title: "1 SOL",
+    text: "+ txn fee",
+  },
+  {
     title: "100+",
     text: "traits",
   },

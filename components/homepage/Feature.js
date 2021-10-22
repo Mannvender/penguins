@@ -38,8 +38,8 @@ const FeatureSection = ({ features }) => {
         {features.map((feature, i) => (
           <StyledBox
             p={[3]}
-            height={["183px", "264px"]}
-            flexBasis={["75%", "40%", "20%"]}
+            height={["183px", "240px"]}
+            flexBasis={["75%", "40%", "16%"]}
             mb={[5, 6]}
           >
             <StatContainer
