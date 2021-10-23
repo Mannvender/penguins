@@ -88,7 +88,7 @@ const LaunchInfoSection = ({ mintDate, dateOptions, isMintLinkVisible }) => {
     }
   };
   const countdownRendererSol = ({ completed }) => {
-    if (!completed && !flags?.presale) {
+    if (!completed) {
       // Render a not completed state
       return <></>;
     } else {

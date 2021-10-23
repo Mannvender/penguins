@@ -14,6 +14,7 @@ import { address, abi } from "ethContract";
 import { DEFAULT_ERROR_MESSAGE } from "messages";
 import { LinkExternal as Link } from "../Links";
 import ConnectWallet from "components/ConnectWallet";
+import { useFlags } from "@happykit/flags/client";
 
 export const IceCss = css`
   &:before {
@@ -40,13 +41,15 @@ const IceBox = styled(Box)`
   }
 `;
 
-const MintSection = ({}) => {
+const MintSection = ({ date: mintDate }) => {
+  const { flags } = useFlags();
   const { colors } = useTheme();
   const router = useRouter();
   const [amount, setAmount] = useState(4);
   const [ethAddressWC, setEthAddressWC] = useState("");
   const [ethAddress, setEthAddress] = useState("");
   const [supplyStats, setStats] = useState({});
+  const isMintActive = mintDate < new Date() || flags?.presale;
 
   const connectMetamask = async () => {
     if (window.ethereum) {
@@ -193,6 +196,12 @@ const MintSection = ({}) => {
     }
   };
 
+  if (!isMintActive)
+    return (
+      <Heading color={colors.light} fontSize={[4, 6]}>
+        Sale is not live yet!
+      </Heading>
+    );
   return (
     <IceBox p={[4]}>
       <Box my={[1]} textAlign="center">

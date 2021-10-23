@@ -18,6 +18,7 @@ import {
   mintOneToken,
   awaitTransactionSignatureConfirmation,
 } from "utils/solana";
+import { useFlags } from "@happykit/flags/client";
 
 const treasury = new anchor.web3.PublicKey(
   process.env.NEXT_PUBLIC_TREASURY_ADDRESS
@@ -62,7 +63,8 @@ const IceBox = styled(Box)`
   }
 `;
 
-const MintSection = ({}) => {
+const MintSection = ({ date: mintDate }) => {
+  const { flags } = useFlags();
   const wallet = useWallet();
   const { colors } = useTheme();
 
@@ -72,6 +74,7 @@ const MintSection = ({}) => {
   const [isMinting, setIsMinting] = useState(false); // true when user got to press MINT
   const [amount, setAmount] = useState(4);
   const [candyMachine, setCandyMachine] = useState();
+  const isMintActive = mintDate < new Date() || flags?.solanaMint;
 
   const mintOne = async () => {
     try {
@@ -178,6 +181,12 @@ const MintSection = ({}) => {
 
   const handleChange = (e) => setAmount(parseInt(e.target.value));
 
+  if (!isMintActive)
+    return (
+      <Heading color={colors.light} fontSize={[4, 6]}>
+        Sale is not live yet!
+      </Heading>
+    );
   return (
     <IceBox p={[4]}>
       <Flex

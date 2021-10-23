@@ -3,6 +3,7 @@ import { Box, Flex } from "rebass";
 import Particles from "react-particles-js";
 import { useTheme } from "styled-components";
 import dynamic from "next/dynamic";
+import Head from "next/head";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
@@ -16,6 +17,9 @@ const Index = () => {
 
   return (
     <>
+      <Head>
+        <title>Mint with Solana</title>
+      </Head>
       <Box position="relative">
         <Header />
         <Box sx={{ position: "absolute" }}>
