@@ -201,7 +201,7 @@ const MintSection = ({}) => {
       <Flex justifyContent="center" textAlign="center" my={[3]}>
         <Box>
           {wallet.connected && (
-            <Text fontSize={[3]} color={colors.dark1} mb={[3]}>
+            <Text fontSize={[2, 3]} color={colors.dark1} mb={[3]}>
               Balance: {(balance || 0).toLocaleString()} SOL
             </Text>
           )}

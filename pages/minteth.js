@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Flex } from "rebass";
 import Particles from "react-particles-js";
 import { useTheme } from "styled-components";
@@ -6,8 +6,6 @@ import dynamic from "next/dynamic";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
-import MintEthSection from "components/mint/MintEth";
-// import MintSolanaSection from "components/mint/MintSolana";
 const MintEthereumSection = dynamic(() => import("components/mint/MintEth"), {
   ssr: false,
 });
@@ -15,6 +13,7 @@ import { MINT_DATE, DATE_OPTIONS } from "messages";
 
 const Index = () => {
   const { colors } = useTheme();
+
   return (
     <>
       <Box position="relative">
