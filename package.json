@@ -29,6 +29,7 @@
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
     "react-particles-js": "^3.5.3",
+    "react-responsive-modal": "^6.1.0",
     "react-spring": "^9.2.4",
     "react-toastify": "^7.0.4",
     "rebass": "^4.0.7",

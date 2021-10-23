@@ -1,18 +1,14 @@
-import { Box, Heading, Flex } from "rebass";
-import { useState, useMemo, useEffect } from "react";
-import styled, { useTheme, css, createGlobalStyle } from "styled-components";
+import { Box, Heading, Flex, Text } from "rebass";
+import { useState, useEffect } from "react";
+import styled, { useTheme, css } from "styled-components";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
-import { isMobile } from "react-device-detect";
-import { FaExternalLinkAlt } from "react-icons/fa";
-import Label from "../Label";
 import Input from "../Input";
 import Button from "../Button";
-import { address, abi, price } from "ethContract";
-import { DEFAULT_ERROR_MESSAGE } from "messages";
-import { LinkExternal as Link } from "../Links";
+import MultipleSol from "components/mint/MultipleSol";
+import { buttonCss } from "components/Button";
 
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { WalletMultiButton as WalletButtonBase } from "@solana/wallet-adapter-react-ui";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import * as anchor from "@project-serum/anchor";
@@ -38,6 +34,9 @@ const connection = new anchor.web3.Connection(rpcHost);
 // const startDateSeed = parseInt(process.env.NEXT_PUBLIC_CANDY_START_DATE, 10);
 const txTimeout = 30000; // milliseconds (confirm this works for your project)
 
+const WalletMultiButton = styled(WalletButtonBase)`
+  ${buttonCss}
+`;
 export const IceCss = css`
   &:before {
     content: "";
@@ -63,21 +62,19 @@ const IceBox = styled(Box)`
   }
 `;
 
-const MintSection = ({ ethAddress }) => {
+const MintSection = ({}) => {
   const wallet = useWallet();
   const { colors } = useTheme();
-  const router = useRouter();
 
   const [balance, setBalance] = useState();
   const [isActive, setIsActive] = useState(true); // true when countdown completes
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
   const [isMinting, setIsMinting] = useState(false); // true when user got to press MINT
-  const [amount, setAmount] = useState(8);
+  const [amount, setAmount] = useState(4);
   const [candyMachine, setCandyMachine] = useState();
 
-  const handleClick = async () => {
+  const mintOne = async () => {
     try {
-      setIsMinting(true);
       if (wallet.connected && candyMachine?.program && wallet.publicKey) {
         const mintTxId = await mintOneToken(
           candyMachine,
@@ -127,6 +124,18 @@ const MintSection = ({ ethAddress }) => {
         const balance = await connection.getBalance(wallet?.publicKey);
         setBalance(balance / LAMPORTS_PER_SOL);
       }
+    }
+  };
+  const handleClick = async () => {
+    setIsMinting(true);
+    const numOfMints = amount || 1;
+    try {
+      for (let index = 0; index < numOfMints; index++) {
+        await mintOne();
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
       setIsMinting(false);
     }
   };
@@ -167,24 +176,16 @@ const MintSection = ({ ethAddress }) => {
     })();
   }, [wallet, candyMachineId, connection]);
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-
-    if (value.length) {
-      const parsedVal = parseInt(value);
-      if (parsedVal <= 18 && parsedVal > 0) {
-        setAmount(parsedVal);
-      } else {
-        toast.error("Amount should be between 1 and 18.");
-      }
-    } else {
-      setAmount(value);
-    }
-  };
+  const handleChange = (e) => setAmount(parseInt(e.target.value));
 
   return (
-    <IceBox p={[3]}>
-      <Box my={[1]} textAlign="center">
+    <IceBox p={[4]}>
+      <Flex
+        my={[1]}
+        textAlign="center"
+        flexDirection="column"
+        alignItems="center"
+      >
         <Heading
           fontSize={[5, 6]}
           fontWeight={[600]}
@@ -193,63 +194,63 @@ const MintSection = ({ ethAddress }) => {
           color={colors.dark1}
           textAlign={["center"]}
         >
-          Solana
+          Mint with Solana
         </Heading>
-      </Box>
-      <Box
-        sx={{
-          border: `1px solid ${colors.dark2}`,
-          borderRadius: "64px",
-          fontSize: [4, 5],
-        }}
-        mb={[4]}
-      >
-        <Input
-          id="amount"
-          name="amount"
-          type="number"
-          value={amount}
-          max={20}
-          min={1}
-          placeholder="How many?"
-          style={{ width: "100%" }}
-          onChange={handleChange}
-        />
-      </Box>
-      <Flex justifyContent="center" mb={[3]}>
-        <main>
+        <MultipleSol />
+      </Flex>
+      <Flex justifyContent="center" textAlign="center" my={[3]}>
+        <Box>
           {wallet.connected && (
-            <p>Address: {shortenAddress(wallet.publicKey?.toBase58() || "")}</p>
+            <Text fontSize={[3]} color={colors.dark1} mb={[3]}>
+              Balance: {(balance || 0).toLocaleString()} SOL
+            </Text>
           )}
-
-          {wallet.connected && (
-            <p>Balance: {(balance || 0).toLocaleString()} SOL</p>
-          )}
+          <WalletMultiButton />
 
           <>
-            {!wallet.connected ? (
-              <WalletMultiButton />
-            ) : (
-              <Button
-                disabled={isSoldOut || isMinting || !isActive}
-                style={{ width: "100%" }}
-                color={colors.light}
-                onClick={handleClick}
-                disabled={!Boolean(amount)}
-                color1={colors.accent1}
-                color2={colors.accent3}
-              >
-                {isSoldOut
-                  ? "Sold Out"
-                  : isActive
-                  ? isMinting
-                    ? "Minting..."
-                    : "Mint"
-                  : "Not active"}
-              </Button>
+            {wallet.connected && (
+              <Flex flexDirection="column" my={[4]}>
+                <Box
+                  sx={{
+                    border: `1px solid ${colors.dark2}`,
+                    borderRadius: "64px",
+                    fontSize: [4, 5],
+                  }}
+                  mb={[4]}
+                >
+                  <Input
+                    id="amount"
+                    name="amount"
+                    type="number"
+                    value={amount}
+                    max={20}
+                    min={1}
+                    placeholder="How many?"
+                    style={{ width: "100%" }}
+                    onChange={handleChange}
+                  />
+                </Box>
+                <Button
+                  disabled={isSoldOut || isMinting || !isActive}
+                  style={{ width: "100%" }}
+                  color={colors.light}
+                  onClick={handleClick}
+                  disabled={!Boolean(amount)}
+                  color1={colors.accent1}
+                  color2={colors.accent3}
+                >
+                  {isSoldOut
+                    ? "Sold Out"
+                    : isActive
+                    ? isMinting
+                      ? "Minting..."
+                      : "Mint " + (amount || 1)
+                    : "Not active"}
+                </Button>
+              </Flex>
             )}
           </>
-        </main>
+        </Box>
       </Flex>
     </IceBox>
   );

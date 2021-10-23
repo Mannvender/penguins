@@ -6,8 +6,6 @@ import dynamic from "next/dynamic";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
-import MintEthSection from "components/mint/MintEth";
-// import MintSolanaSection from "components/mint/MintSolana";
 const MintSolanaSection = dynamic(() => import("components/mint/MintSolana"), {
   ssr: false,
 });
@@ -15,6 +13,7 @@ import { MINT_DATE, DATE_OPTIONS } from "messages";
 
 const Index = () => {
   const { colors } = useTheme();
+
   return (
     <>
       <Box position="relative">
