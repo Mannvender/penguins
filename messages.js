@@ -142,7 +142,7 @@ export const TEAM = [
 export const FAQS = [
   {
     question: "When mint?",
-    answer: "Does 19th work for you, it works for us",
+    answer: "Does 26th Oct work for you, it works for us",
     height: ["56px", "40px"],
   },
   {
