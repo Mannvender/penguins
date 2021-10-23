@@ -7,6 +7,7 @@ import Image from "next/image";
 import Button from "components/Button";
 import SplitShape from "components/shapes/Split";
 import styled from "styled-components";
+import { useFlags } from "@happykit/flags/client";
 
 const StyledBox = styled(Box)`
   display: none;
@@ -15,9 +16,16 @@ const StyledBox = styled(Box)`
   }
 `;
 const LaunchInfoSection = ({ mintDate, dateOptions, isMintLinkVisible }) => {
+  const { flags } = useFlags();
   const { colors, fonts } = useTheme();
   const countdownRenderer = ({ days, hours, minutes, seconds, completed }) => {
-    if (!completed) {
+    if (flags?.presale) {
+      return (
+        <Heading fontSize={[6]} color={colors.light}>
+          Presale is live!!
+        </Heading>
+      );
+    } else if (!completed) {
       // Render a completed state
       return (
         <Flex flexDirection="column" alignItems="center" pb={[5, 0]}>
@@ -60,10 +68,11 @@ const LaunchInfoSection = ({ mintDate, dateOptions, isMintLinkVisible }) => {
   };
 
   const countdownRendererEth = ({ completed }) => {
-    if (!completed) {
-      // Render a completed state
+    if (!completed && !flags?.presale) {
+      // Render a not completed state
       return <></>;
     } else {
+      // Render a completed state
       return (
         <Link href="/minteth">
           <Button
@@ -79,10 +88,11 @@ const LaunchInfoSection = ({ mintDate, dateOptions, isMintLinkVisible }) => {
     }
   };
   const countdownRendererSol = ({ completed }) => {
-    if (!completed) {
-      // Render a completed state
+    if (!completed && !flags?.presale) {
+      // Render a not completed state
       return <></>;
     } else {
+      // Render a completed state
       return (
         <Link href="/mintsol">
           <Button

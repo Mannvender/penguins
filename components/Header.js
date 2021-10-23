@@ -16,6 +16,7 @@ import Button from "components/Button";
 import { LinkExternal as Link } from "components/Links";
 import useScroll from "hooks/scroll";
 import { MINT_DATE } from "messages";
+import { useFlags } from "@happykit/flags/client";
 
 const GiPenguin = styled(GiPenguinBase)`
   cursor: pointer;
@@ -69,9 +70,10 @@ const BottomNav = styled(Flex)`
   box-shadow: -3px -1px 8px 0px rgba(0, 0, 0, 0.8);
 `;
 const Header = () => {
+  const { flags } = useFlags();
   const { colors } = useTheme();
   const { scrollDirection } = useScroll();
-  const isMintActive = MINT_DATE < new Date();
+  const isMintActive = MINT_DATE < new Date() || flags?.presale;
 
   const renderIcon = (label) => {
     switch (label) {

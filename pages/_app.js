@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
 import Head from "next/head";
 import { ToastContainer as ToastContainerBase } from "react-toastify";
+import { configure } from "@happykit/flags/config";
 import "react-toastify/dist/ReactToastify.min.css";
 const WalletConnectionProvider = dynamic(
   () => import("components/WalletConnectionProvider"),
@@ -11,8 +12,10 @@ const WalletConnectionProvider = dynamic(
     ssr: false,
   }
 );
-
 import theme from "../styles/theme";
+configure({
+  envKey: process.env.NEXT_PUBLIC_FLAGS_ENVIRONMENT_KEY,
+});
 
 const ToastContainer = styled(ToastContainerBase).attrs({
   // custom props
