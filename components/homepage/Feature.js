@@ -37,6 +37,7 @@ const FeatureSection = ({ features }) => {
       >
         {features.map((feature, i) => (
           <StyledBox
+            key={i}
             p={[3]}
             height={["183px", "264px"]}
             flexBasis={["75%", "40%", "18%"]}

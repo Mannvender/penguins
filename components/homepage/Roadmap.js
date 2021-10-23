@@ -97,6 +97,7 @@ const RoadmapSection = ({ roadmap }) => {
               key={step.when}
               mx={[4]}
               textAlign={i % 2 === 0 ? "left" : "right"}
+              key={i}
             >
               <Heading color={colors.light} fontWeight={600} mb={[2]}>
                 {step.when}%

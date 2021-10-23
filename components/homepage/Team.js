@@ -61,7 +61,7 @@ const TeamSection = ({ team }) => {
         </Heading>
         <Flex px={[5]} flexWrap="wrap">
           {team.map((member, index) => (
-            <Box flexBasis={["100%", "50%", "25%"]} p={[4]}>
+            <Box flexBasis={["100%", "50%", "25%"]} p={[4]} key={index}>
               <Box height="100px">
                 <Text
                   color={colors[member.color]}

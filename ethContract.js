@@ -1,5 +1,4 @@
 export const address = "0x9122Bee8000FC7a7C625164caDf485907dfFf3A2";
-export const price = 10000000000000000;
 export const abi = [
   {
     inputs: [

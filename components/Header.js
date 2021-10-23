@@ -121,7 +121,7 @@ const Header = () => {
         >
           <Box display={["none", "initial"]}>
             {isMintActive && (
-              <NavLink href="/mint#mint">
+              <NavLink href="/#launch">
                 <Button bgColor={colors.dark1} color={colors.light1}>
                   Mint
                 </Button>
@@ -175,7 +175,7 @@ const Header = () => {
           </NavLink>
         ))}
         {isMintActive && (
-          <NavLink href="/mint" py={[1]}>
+          <NavLink href="/#launch" py={[1]}>
             <Flex
               flexDirection="column"
               alignItems="center"
