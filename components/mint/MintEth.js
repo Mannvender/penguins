@@ -44,12 +44,11 @@ const IceBox = styled(Box)`
 const MintSection = ({ date: mintDate }) => {
   const { flags } = useFlags();
   const { colors } = useTheme();
-  const router = useRouter();
   const [amount, setAmount] = useState(4);
   const [ethAddressWC, setEthAddressWC] = useState("");
   const [ethAddress, setEthAddress] = useState("");
   const [supplyStats, setStats] = useState({});
-  const isMintActive = mintDate < new Date() || flags?.presale;
+  const isMintActive = mintDate < new Date() || flags?.presale || flags?.ethMint;
 
   const connectMetamask = async () => {
     if (window.ethereum) {
