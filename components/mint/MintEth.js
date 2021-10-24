@@ -156,7 +156,6 @@ const MintSection = ({ date: mintDate }) => {
     const web3 = window.web3;
     if (!web3 || !ethAddress) {
       toast.error("Please connect your wallet.");
-      if (isMobile) router.push("/mint#connect-wallet");
     } else {
       try {
         const contract = new web3.eth.Contract(abi, address);

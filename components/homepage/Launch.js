@@ -21,7 +21,7 @@ const LaunchInfoSection = ({ mintDate, dateOptions, isMintLinkVisible }) => {
   const countdownRenderer = ({ days, hours, minutes, seconds, completed }) => {
     if (flags?.presale) {
       return (
-        <Heading fontSize={[6]} color={colors.light}>
+        <Heading fontSize={[6]} color={colors.light} textAlign="center">
           Presale is live!!
         </Heading>
       );
