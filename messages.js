@@ -70,7 +70,7 @@ export const DADDY_ROADMAP = [
   },
 ];
 
-export const MINT_DATE = new Date("2021-10-26T16:30:00.000+00:00");
+export const MINT_DATE = new Date("2021-10-26T17:30:00.000+00:00");
 export const DATE_OPTIONS = {
   weekday: "long",
   year: "numeric",
