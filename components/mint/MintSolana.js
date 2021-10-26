@@ -256,6 +256,7 @@ const MintSection = ({ date: mintDate }) => {
                       : "Mint " + (amount || 1)
                     : "Not active"}
                 </Button>
+                {Boolean(flags?.remaining) && <Button disabled style={{background: colors.dark, cursor: 'default', marginTop: '16px'}}>{flags.remaining} Left</Button>}
               </Flex>
             )}
           </>
