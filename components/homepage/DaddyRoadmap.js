@@ -113,8 +113,8 @@ export const Hoody = ({ text }) => {
   return (
     <>
       <Box
-        height='50vh'
-        width={['45vh', '50vh']}
+        height={['30vh', '50vh']}
+        width={['35vh', '50vh']}
         sx={{
           position: 'relative',
           borderRadius: '8px 8px 0 0',
@@ -125,21 +125,30 @@ export const Hoody = ({ text }) => {
         <Image
           quality='70'
           layout='fill'
-          height='40vh'
-          width='40vh'
+          height='100%'
+          width='100%'
           objectPosition='50% 30%'
           src='/penguin-hoody.png'
         />
       </Box>
-      <Text
-        fontSize={[2]}
-        p={[2]}
-        my={[0]}
-        mx='auto'
-        width={['87%', '34.5%']}
-        backgroundColor={'lightBlue'}
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></Text>
+      <Box
+        width={['35vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '0 0 8px 8px',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Text
+          fontSize={[1, 2]}
+          p={[3]}
+          mx='auto'
+          width={['100%']}
+          backgroundColor={'lightBlue'}
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></Text>
+      </Box>
     </>
   );
 };
@@ -148,8 +157,8 @@ export const Companion = ({ text }) => {
   return (
     <>
       <Box
-        height='50vh'
-        width={['45vh', '50vh']}
+        height={['30vh', '50vh']}
+        width={['35vh', '50vh']}
         sx={{
           position: 'relative',
           borderRadius: '8px 8px 0 0',
@@ -160,21 +169,30 @@ export const Companion = ({ text }) => {
         <Image
           quality='70'
           layout='fill'
-          height='40vh'
-          width='40vh'
+          height='100%'
+          width='100%'
           objectPosition='50% 30%'
           src='/penguin-companion.png'
         />
       </Box>
-      <Text
-        fontSize={[2]}
-        p={[2]}
-        my={[0]}
-        mx='auto'
-        width={['87%', '34.5%']}
-        backgroundColor={'lightBlue'}
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></Text>
+      <Box
+        width={['35vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '0 0 8px 8px',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Text
+          fontSize={[1, 2]}
+          p={[3]}
+          mx='auto'
+          width={['100%']}
+          backgroundColor={'lightBlue'}
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></Text>
+      </Box>
     </>
   );
 };
@@ -183,8 +201,8 @@ export const Extinction = ({ text }) => {
   return (
     <>
       <Box
-        height='50vh'
-        width={['45vh', '50vh']}
+        height={['30vh', '50vh']}
+        width={['35vh', '50vh']}
         sx={{
           position: 'relative',
           borderRadius: '8px 8px 0 0',
@@ -195,21 +213,30 @@ export const Extinction = ({ text }) => {
         <Image
           quality='70'
           layout='fill'
-          height='40vh'
-          width='40vh'
+          height='100%'
+          width='100%'
           objectPosition='50% 30%'
           src='/penguin-extinction.png'
         />
       </Box>
-      <Text
-        fontSize={[2]}
-        p={[2]}
-        my={[0]}
-        mx='auto'
-        width={['87%', '34.5%']}
-        backgroundColor={'lightBlue'}
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></Text>
+      <Box
+        width={['35vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '0 0 8px 8px',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Text
+          fontSize={[1, 2]}
+          p={[3]}
+          mx='auto'
+          width={['100%']}
+          backgroundColor={'lightBlue'}
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></Text>
+      </Box>
     </>
   );
 };
@@ -218,8 +245,8 @@ export const Comics = ({ text }) => {
   return (
     <>
       <Box
-        height='50vh'
-        width={['45vh', '50vh']}
+        height={['30vh', '50vh']}
+        width={['35vh', '50vh']}
         sx={{
           position: 'relative',
           borderRadius: '8px 8px 0 0',
@@ -230,21 +257,31 @@ export const Comics = ({ text }) => {
         <Image
           quality='70'
           layout='fill'
-          height='40vh'
-          width='40vh'
+          height='100%'
+          width='100%'
           objectPosition='50% 30%'
           src='/penguin-comics.jpg'
         />
       </Box>
-      <Text
-        fontSize={[2]}
-        p={[2]}
-        my={[0]}
-        mx='auto'
-        width={['87%', '34.5%']}
-        backgroundColor={'lightBlue'}
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></Text>
+      <Box
+        width={['35vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '0 0 8px 8px',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Text
+          fontSize={[1, 2]}
+          p={[3]}
+          mx='auto'
+          width={['100%']}
+          backgroundColor={'lightBlue'}
+          textAlign={'center'}
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></Text>
+      </Box>
     </>
   );
 };
@@ -253,8 +290,8 @@ export const DC = ({ text }) => {
   return (
     <>
       <Box
-        height='50vh'
-        width={['45vh', '50vh']}
+        height={['30vh', '50vh']}
+        width={['35vh', '50vh']}
         sx={{
           position: 'relative',
           borderRadius: '8px 8px 0 0',
@@ -262,24 +299,33 @@ export const DC = ({ text }) => {
           margin: '0 auto',
         }}
       >
-       <Image
+        <Image
           quality='70'
           layout='fill'
-          height='40vh'
-          width='40vh'
+          height='100%'
+          width='100%'
           objectPosition='50% 30%'
           src='/penguin-suicide-squad.png'
         />
       </Box>
-      <Text
-        fontSize={[2]}
-        p={[2]}
-        my={[0]}
-        mx='auto'
-        width={['87%', '34.5%']}
-        backgroundColor={'lightBlue'}
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></Text>
+      <Box
+        width={['35vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '0 0 8px 8px',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Text
+          fontSize={[1, 2]}
+          p={[3]}
+          mx='auto'
+          width={['100%']}
+          backgroundColor={'lightBlue'}
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></Text>
+      </Box>
     </>
   );
 };
@@ -288,8 +334,8 @@ export const Climate = ({ text }) => {
   return (
     <>
       <Box
-        height='50vh'
-        width={['45vh', '50vh']}
+        height={['30vh', '50vh']}
+        width={['35vh', '50vh']}
         sx={{
           position: 'relative',
           borderRadius: '8px 8px 0 0',
@@ -300,21 +346,30 @@ export const Climate = ({ text }) => {
         <Image
           quality='70'
           layout='fill'
-          height='40vh'
-          width='40vh'
+          height='100%'
+          width='100%'
           objectPosition='50% 30%'
           src='/penguin-climate-change.png'
         />
       </Box>
-      <Text
-        fontSize={[2]}
-        p={[2]}
-        my={[0]}
-        mx='auto'
-        width={['87%', '34.5%']}
-        backgroundColor={'lightBlue'}
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></Text>
+      <Box
+        width={['35vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '0 0 8px 8px',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Text
+          fontSize={[1, 2]}
+          p={[3]}
+          mx='auto'
+          width={['100%']}
+          backgroundColor={'lightBlue'}
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></Text>
+      </Box>
     </>
   );
 };
@@ -323,8 +378,8 @@ export const Movie = ({ text }) => {
   return (
     <>
       <Box
-        height='50vh'
-        width={['45vh', '50vh']}
+        height={['30vh', '50vh']}
+        width={['35vh', '50vh']}
         sx={{
           position: 'relative',
           borderRadius: '8px 8px 0 0',
@@ -335,21 +390,30 @@ export const Movie = ({ text }) => {
         <Image
           quality='70'
           layout='fill'
-          height='40vh'
-          width='40vh'
+          height='100%'
+          width='100%'
           objectPosition='50% 30%'
           src='/penguin-bollywood.jpg'
         />
       </Box>
-      <Text
-        fontSize={[2]}
-        p={[2]}
-        my={[0]}
-        mx='auto'
-        width={['87%', '34.5%']}
-        backgroundColor={'lightBlue'}
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></Text>
+      <Box
+        width={['35vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '0 0 8px 8px',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Text
+          fontSize={[1, 2]}
+          p={[3]}
+          mx='auto'
+          width={['100%']}
+          backgroundColor={'lightBlue'}
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></Text>
+      </Box>
     </>
   );
 };
@@ -358,43 +422,8 @@ export const Convertible = ({ text }) => {
   return (
     <>
       <Box
-        height='50vh'
-        width={['45vh', '50vh']}
-        sx={{
-          position: 'relative',
-          borderRadius: '8px 8px 0 0',
-          overflow: 'hidden',
-          margin: '0 auto',
-        }}
-      >
-       <Image
-          quality='70'
-          layout='fill'
-          height='40vh'
-          width='40vh'
-          objectPosition='50% 30%'
-          src='/penguin-covertible.jpg'
-        />
-      </Box>
-      <Text
-        fontSize={[2]}
-        p={[2]}
-        my={[0]}
-        mx='auto'
-        width={['87%', '34.5%']}
-        backgroundColor={'lightBlue'}
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></Text>
-    </>
-  );
-};
-
-export const Sue = ({ text }) => {
-  return (
-    <>
-      <Box
-        height='50vh'
-        width={['45vh', '50vh']}
+        height={['30vh', '50vh']}
+        width={['35vh', '50vh']}
         sx={{
           position: 'relative',
           borderRadius: '8px 8px 0 0',
@@ -405,21 +434,74 @@ export const Sue = ({ text }) => {
         <Image
           quality='70'
           layout='fill'
-          height='40vh'
-          width='40vh'
+          height='100%'
+          width='100%'
+          objectPosition='50% 30%'
+          src='/penguin-covertible.jpg'
+        />
+      </Box>
+      <Box
+        width={['35vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '0 0 8px 8px',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Text
+          fontSize={[1, 2]}
+          p={[3]}
+          mx='auto'
+          width={['100%']}
+          backgroundColor={'lightBlue'}
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></Text>
+      </Box>
+    </>
+  );
+};
+
+export const Sue = ({ text }) => {
+  return (
+    <>
+      <Box
+        height={['30vh', '50vh']}
+        width={['35vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '8px 8px 0 0',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Image
+          quality='70'
+          layout='fill'
+          height='100%'
+          width='100%'
           objectPosition='50% 30%'
           src='/penguin-sue.png'
         />
       </Box>
-      <Text
-        fontSize={[2]}
-        p={[2]}
-        my={[0]}
-        mx='auto'
-        width={['87%', '34.5%']}
-        backgroundColor={'lightBlue'}
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></Text>
+      <Box
+        width={['35vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '0 0 8px 8px',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Text
+          fontSize={[1, 2]}
+          p={[3]}
+          mx='auto'
+          width={['100%']}
+          backgroundColor={'lightBlue'}
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></Text>
+      </Box>
     </>
   );
 };
@@ -427,15 +509,24 @@ export const Sue = ({ text }) => {
 export const Default = ({ text }) => {
   return (
     <>
-      <Text
-        fontSize={[2]}
-        p={[2]}
-        my={[0]}
-        mx='auto'
-        width={['87%', '34.5%']}
-        backgroundColor={'lightBlue'}
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></Text>
+      <Box
+        width={['35vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '8px',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Text
+          fontSize={[1, 2]}
+          p={[3]}
+          mx='auto'
+          width={['100%']}
+          backgroundColor={'lightBlue'}
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></Text>
+      </Box>
     </>
   );
 };
