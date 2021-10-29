@@ -1,88 +1,441 @@
-import React from "react";
-import { Heading, Box, Flex, Text } from "rebass";
-import { useTheme } from "styled-components";
-import Wave from "components/shapes/Wave";
-import { FaTshirt } from "react-icons/fa";
-import { AiOutlineFileJpg, AiOutlineCar } from "react-icons/ai";
-import { GiLifeBar } from "react-icons/gi";
-import { SiDcentertainment } from "react-icons/si";
-import { MdMovie, MdAttachMoney } from "react-icons/md";
-import { WiCloudyWindy } from "react-icons/wi";
-import { ImHammer2 } from "react-icons/im";
-import { BsBook } from "react-icons/bs";
+import React from 'react';
+import { Heading, Box, Flex, Text, Card } from 'rebass';
+import { useTheme } from 'styled-components';
+import Image from 'next/image';
+import { FaTshirt } from 'react-icons/fa';
+import { AiOutlineFileJpg, AiOutlineCar } from 'react-icons/ai';
+import { GiLifeBar } from 'react-icons/gi';
+import { SiDcentertainment } from 'react-icons/si';
+import { MdMovie, MdAttachMoney } from 'react-icons/md';
+import { WiCloudyWindy } from 'react-icons/wi';
+import { ImHammer2 } from 'react-icons/im';
+import { BsBook } from 'react-icons/bs';
+
+// import {
+//   VerticalTimeline,
+//   VerticalTimelineElement,
+// } from 'react-vertical-timeline-component';
+// import 'react-vertical-timeline-component/style.min.css';
 
 const DaddyRoadmapSection = ({ roadmap }) => {
   const { colors } = useTheme();
 
   const renderIcon = (tag) => {
     switch (tag) {
-      case "merch":
+      case 'merch':
         return <FaTshirt size={24} />;
-      case "jpg":
+      case 'jpg':
         return <AiOutlineFileJpg size={24} />;
-      case "life":
+      case 'life':
         return <GiLifeBar size={24} />;
-      case "book":
+      case 'book':
         return <BsBook size={24} />;
-      case "dc":
+      case 'dc':
         return <SiDcentertainment size={24} />;
-      case "cloud":
+      case 'cloud':
         return <WiCloudyWindy size={24} />;
-      case "bollywood":
+      case 'bollywood':
         return <MdMovie size={24} />;
-      case "car":
+      case 'car':
         return <AiOutlineCar size={24} />;
-      case "hammer":
+      case 'hammer':
         return <ImHammer2 size={24} />;
-      case "money":
+      case 'money':
         return <MdAttachMoney size={24} />;
       default:
         break;
     }
   };
+
+  const renderImage = (img, msg) => {
+    switch (img) {
+      case 'hoody':
+        return <Hoody text={msg} />;
+      case 'companion':
+        return <Companion text={msg} />;
+      case 'extinction':
+        return <Extinction text={msg} />;
+      case 'comics':
+        return <Comics text={msg} />;
+      case 'dc':
+        return <DC text={msg} />;
+      case 'climate':
+        return <Climate text={msg} />;
+      case 'movie':
+        return <Movie text={msg} />;
+      case 'convertible':
+        return <Convertible text={msg} />;
+      case 'sue':
+        return <Sue text={msg} />;
+      default:
+        return <Default text={msg} />;
+    }
+  };
+
   return (
     <Flex
-      flexDirection="column"
-      height={["auto"]}
-      alignItems="center"
-      justifyContent="center"
-      role="region"
-      aria-label="Roadmap"
-      id="roadmap"
-      sx={{ position: "relative" }}
+      flexDirection='column'
+      height={['auto']}
+      alignItems='center'
+      justifyContent='center'
+      role='region'
+      aria-label='Roadmap'
+      id='roadmap'
+      sx={{ position: 'relative' }}
     >
-      <Box my={[6]} mb={[0 , 0]}>
+      <Box my={[6]} mb={[0, 0]} px={[3]}>
         <Heading
           fontSize={[4, 6]}
           fontWeight={[600]}
           px={[4]}
           pb={[4]}
           color={colors.dark1}
-          textAlign={["center"]}
+          textAlign={['center']}
         >
           Daddy Roadmap
         </Heading>
-        <Box px={[5, 6]} mb={[5, 0]}>
-          {roadmap.map((step, i) => (
-            <Flex mb={[4, 3]} key={i} alignItems="center">
-              <Text
-                color={colors.primary}
-                sx={{ minWidth: ["72px"], fill: colors.primary }}
-              >
-                {renderIcon(step.tag)}
-              </Text>
-              <Text
-                color={colors.dark1}
-                width={["auto", "auto"]}
-                dangerouslySetInnerHTML={{ __html: step.what }}
-              ></Text>
-            </Flex>
-          ))}
-        </Box>
+        {roadmap.map((step, i) => (
+          <Card
+            sx={{ backgroundColor: colors.darkGray, borderRadius: '8px' }}
+            mb={[3]}
+          >
+            {renderImage(step.image, step.what)}
+          </Card>
+        ))}
       </Box>
-      {/* <Wave /> */}
     </Flex>
   );
 };
 
 export default DaddyRoadmapSection;
+
+export const Hoody = ({ text }) => {
+  return (
+    <>
+      <Box
+        height='50vh'
+        width={['45vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '8px 8px 0 0',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Image
+          quality='70'
+          layout='fill'
+          height='40vh'
+          width='40vh'
+          objectPosition='50% 30%'
+          src='/penguin-hoody.png'
+        />
+      </Box>
+      <Text
+        fontSize={[2]}
+        p={[2]}
+        my={[0]}
+        mx='auto'
+        width={['87%', '34.5%']}
+        backgroundColor={'lightBlue'}
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></Text>
+    </>
+  );
+};
+
+export const Companion = ({ text }) => {
+  return (
+    <>
+      <Box
+        height='50vh'
+        width={['45vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '8px 8px 0 0',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Image
+          quality='70'
+          layout='fill'
+          height='40vh'
+          width='40vh'
+          objectPosition='50% 30%'
+          src='/penguin-companion.png'
+        />
+      </Box>
+      <Text
+        fontSize={[2]}
+        p={[2]}
+        my={[0]}
+        mx='auto'
+        width={['87%', '34.5%']}
+        backgroundColor={'lightBlue'}
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></Text>
+    </>
+  );
+};
+
+export const Extinction = ({ text }) => {
+  return (
+    <>
+      <Box
+        height='50vh'
+        width={['45vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '8px 8px 0 0',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Image
+          quality='70'
+          layout='fill'
+          height='40vh'
+          width='40vh'
+          objectPosition='50% 30%'
+          src='/penguin-extinction.png'
+        />
+      </Box>
+      <Text
+        fontSize={[2]}
+        p={[2]}
+        my={[0]}
+        mx='auto'
+        width={['87%', '34.5%']}
+        backgroundColor={'lightBlue'}
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></Text>
+    </>
+  );
+};
+
+export const Comics = ({ text }) => {
+  return (
+    <>
+      <Box
+        height='50vh'
+        width={['45vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '8px 8px 0 0',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Image
+          quality='70'
+          layout='fill'
+          height='40vh'
+          width='40vh'
+          objectPosition='50% 30%'
+          src='/penguin-comics.jpg'
+        />
+      </Box>
+      <Text
+        fontSize={[2]}
+        p={[2]}
+        my={[0]}
+        mx='auto'
+        width={['87%', '34.5%']}
+        backgroundColor={'lightBlue'}
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></Text>
+    </>
+  );
+};
+
+export const DC = ({ text }) => {
+  return (
+    <>
+      <Box
+        height='50vh'
+        width={['45vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '8px 8px 0 0',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+       <Image
+          quality='70'
+          layout='fill'
+          height='40vh'
+          width='40vh'
+          objectPosition='50% 30%'
+          src='/penguin-suicide-squad.png'
+        />
+      </Box>
+      <Text
+        fontSize={[2]}
+        p={[2]}
+        my={[0]}
+        mx='auto'
+        width={['87%', '34.5%']}
+        backgroundColor={'lightBlue'}
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></Text>
+    </>
+  );
+};
+
+export const Climate = ({ text }) => {
+  return (
+    <>
+      <Box
+        height='50vh'
+        width={['45vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '8px 8px 0 0',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Image
+          quality='70'
+          layout='fill'
+          height='40vh'
+          width='40vh'
+          objectPosition='50% 30%'
+          src='/penguin-climate-change.png'
+        />
+      </Box>
+      <Text
+        fontSize={[2]}
+        p={[2]}
+        my={[0]}
+        mx='auto'
+        width={['87%', '34.5%']}
+        backgroundColor={'lightBlue'}
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></Text>
+    </>
+  );
+};
+
+export const Movie = ({ text }) => {
+  return (
+    <>
+      <Box
+        height='50vh'
+        width={['45vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '8px 8px 0 0',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Image
+          quality='70'
+          layout='fill'
+          height='40vh'
+          width='40vh'
+          objectPosition='50% 30%'
+          src='/penguin-bollywood.jpg'
+        />
+      </Box>
+      <Text
+        fontSize={[2]}
+        p={[2]}
+        my={[0]}
+        mx='auto'
+        width={['87%', '34.5%']}
+        backgroundColor={'lightBlue'}
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></Text>
+    </>
+  );
+};
+
+export const Convertible = ({ text }) => {
+  return (
+    <>
+      <Box
+        height='50vh'
+        width={['45vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '8px 8px 0 0',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+       <Image
+          quality='70'
+          layout='fill'
+          height='40vh'
+          width='40vh'
+          objectPosition='50% 30%'
+          src='/penguin-covertible.jpg'
+        />
+      </Box>
+      <Text
+        fontSize={[2]}
+        p={[2]}
+        my={[0]}
+        mx='auto'
+        width={['87%', '34.5%']}
+        backgroundColor={'lightBlue'}
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></Text>
+    </>
+  );
+};
+
+export const Sue = ({ text }) => {
+  return (
+    <>
+      <Box
+        height='50vh'
+        width={['45vh', '50vh']}
+        sx={{
+          position: 'relative',
+          borderRadius: '8px 8px 0 0',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}
+      >
+        <Image
+          quality='70'
+          layout='fill'
+          height='40vh'
+          width='40vh'
+          objectPosition='50% 30%'
+          src='/penguin-sue.png'
+        />
+      </Box>
+      <Text
+        fontSize={[2]}
+        p={[2]}
+        my={[0]}
+        mx='auto'
+        width={['87%', '34.5%']}
+        backgroundColor={'lightBlue'}
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></Text>
+    </>
+  );
+};
+
+export const Default = ({ text }) => {
+  return (
+    <>
+      <Text
+        fontSize={[2]}
+        p={[2]}
+        my={[0]}
+        mx='auto'
+        width={['87%', '34.5%']}
+        backgroundColor={'lightBlue'}
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></Text>
+    </>
+  );
+};

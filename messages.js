@@ -29,44 +29,54 @@ export const DADDY_ROADMAP = [
   {
     what: "merch - hoodies with penguin art & stuff - not just T shirts with prints but hoodies that have penguin mouth as cap, some gourmet shit",
     tag: "merch",
+    image: "hoody"
   },
   {
     what: "jpeg backed by jpeg - companion fish",
     tag: "jpg",
+    image:'companion'
   },
   {
     what: "well scratch that - life advice - life lessons from penguins that survived 2 extinction events - as a jpeg - like the insta posts but better",
     tag: "life",
+    image: 'extinction'
   },
   {
     what: "comics",
     tag: "book",
+    image: 'comics'
   },
   {
     what: "well scratch that too - what are we nerds - these polars look like they could star in a suicide squad spinoff",
     tag: "dc",
+    image: 'dc'
   },
   {
     what: "climate change - not just buying senators & bribing politicians but changing the mood of the public",
     tag: "cloud",
+    image:'climate'
   },
   {
     what: "bollywood movie - well technically an indie movie in India but it'll have dances mid scene, an overly ruffled plot & broken physics",
     tag: "bollywood",
+    image:'movie'
   },
   {
     what: `a penguin convertible car - read
     <a target='_blank' rel='noopener noreferrer' href='https://www.scientificamerican.com/article/how-to-prevent-air-conditioners-from-heating-the-planet/' class='underlined-link'>this article</a>
     on why AC exacerbates climate change issue`,
     tag: "car",
+    image:'convertible'
   },
   {
     what: "sue the guys who didn't mint us again for good measure",
     tag: "hammer",
+    image: 'sue'
   },
   {
     what: "think of more ways to make $s & make the floor go through the roof - idk 1/2 a million$s gives you million ways to do awesome things",
     tag: "money",
+    image: ''
   },
 ];
 
